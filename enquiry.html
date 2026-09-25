@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Get involved with Paws Animal Rescue by volunteering, sponsoring, fostering or supporting animals in need.">
+
+    <title>Paws Animal Rescue | Enquiry</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER AND NAVIGATION
+         ========================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">🐾</span>
+
+                <span class="logo-text">
+                    <strong>Paws</strong>
+                    <small>Animal Rescue</small>
+                </span>
+
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                    <a href="enquiry.html" class="active">
+                        Enquiry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu">
+
+                ☰
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <!-- Page banner -->
+        <section class="page-banner">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    GET INVOLVED
+                </p>
+
+                <h1>
+                    There is always room
+                    for <span>one more.</span>
+                </h1>
+
+                <p>
+                    Join our community of people helping animals
+                    find safety, care and loving homes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Introduction -->
+        <section class="enquiry-intro section-spacing">
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <p class="section-label">
+                        HOW CAN YOU HELP?
+                    </p>
+
+                    <h2>
+                        Choose your way to
+                        <span>make a difference.</span>
+                    </h2>
+
+                    <p>
+                        Complete the form below and our team will
+                        get back to you with more information.
+                    </p>
+
+                </div>
+
+
+                <div class="involvement-grid">
+
+                    <article class="involvement-card">
+
+                        <div class="involvement-icon">
+                            🌿
+                        </div>
+
+                        <h3>
+                            Volunteer
+                        </h3>
+
+                        <p>
+                            Give your time by helping with animal care,
+                            administration, events, fundraising or
+                            community activities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="involvement-card">
+
+                        <div class="involvement-icon">
+                            💛
+                        </div>
+
+                        <h3>
+                            Become a Sponsor
+                        </h3>
+
+                        <p>
+                            Support the organisation financially and
+                            help us provide food, shelter and care
+                            for rescued animals.
+                        </p>
+
+                    </article>
+
+
+                    <article class="involvement-card">
+
+                        <div class="involvement-icon">
+                            🏡
+                        </div>
+
+                        <h3>
+                            Foster an Animal
+                        </h3>
+
+                        <p>
+                            Provide a temporary, safe and loving home
+                            for an animal while they wait for adoption.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Enquiry form -->
+        <section class="form-section">
+
+            <div class="section-container form-container">
+
+                <div class="form-heading">
+
+                    <p class="section-label">
+                        SEND AN ENQUIRY
+                    </p>
+
+                    <h2>
+                        Let's make a
+                        <span>difference together.</span>
+                    </h2>
+
+                    <p>
+                        Please complete the form and tell us how
+                        you would like to support Paws Animal Rescue.
+                    </p>
+
+                </div>
+
+
+                <!-- Shown automatically when arriving from an animal's
+                     "Apply to Adopt" link, e.g. enquiry.html?animal=Buddy -->
+                <div id="animalNotice" class="form-message" role="status"></div>
+
+
+                <!-- Enquiry form -->
+                <form id="enquiryForm" class="enquiry-form">
+
+                    <!-- Name fields -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                placeholder="Enter your first name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                placeholder="Enter your last name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Contact details -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="example@email.com"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="e.g. 082 123 4567">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Enquiry type -->
+                    <div class="form-group">
+
+                        <label for="enquiryType">
+                            What would you like to enquire about? *
+                        </label>
+
+                        <select
+                            id="enquiryType"
+                            name="enquiryType"
+                            required>
+
+                            <option value="">
+                                Please select an option
+                            </option>
+
+                            <option value="volunteer">
+                                Becoming a Volunteer
+                            </option>
+
+                            <option value="sponsor">
+                                Becoming a Sponsor
+                            </option>
+
+                            <option value="foster">
+                                Fostering an Animal
+                            </option>
+
+                            <option value="adoption">
+                                Animal Adoption
+                            </option>
+
+                            <option value="general">
+                                General Enquiry
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Animal of interest (pre-filled automatically when
+                         arriving from an animal's "Apply to Adopt" link) -->
+                    <div class="form-group">
+
+                        <label for="animalOfInterest">
+                            Which animal are you interested in?
+                        </label>
+
+                        <input
+                            type="text"
+                            id="animalOfInterest"
+                            name="animalOfInterest"
+                            placeholder="e.g. Buddy (leave blank if not applicable)">
+
+                    </div>
+
+
+                    <!-- Preferred contact method -->
+                    <fieldset class="form-group">
+
+                        <legend>
+                            Preferred Contact Method
+                        </legend>
+
+                        <div class="radio-options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="contactMethod"
+                                    value="email"
+                                    checked>
+
+                                Email
+                            </label>
+
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="contactMethod"
+                                    value="phone">
+
+                                Phone
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- Message -->
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message *
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tell us a little more about how you would like to help..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">
+                        Submit Enquiry
+                    </button>
+
+
+                    <!-- JavaScript confirmation message -->
+                    <div
+                        id="formMessage"
+                        class="form-message"
+                        role="alert">
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-icon">🐾</span>
+
+                    <span class="logo-text">
+                        <strong>Paws</strong>
+                        <small>Animal Rescue</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    Rescue. Love. Rehome.
+                    Giving vulnerable animals the second chance
+                    they deserve.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Contact Us</h3>
+
+                <p>📍 Cape Town, South Africa</p>
+                <p>📞 021 555 0123</p>
+                <p>✉️ hello@pawsrescue.co.za</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Paws Animal Rescue. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

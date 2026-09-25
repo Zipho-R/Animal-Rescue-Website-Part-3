@@ -1,0 +1,1838 @@
+/* =========================================================
+   PAWS ANIMAL RESCUE
+   Main Website Stylesheet
+
+   Colour Theme:
+   Forest Green - Nature and trust
+   Sage Green  - Growth and healing
+   Warm Cream  - Comfort and warmth
+   Coral       - Love and compassion
+   Yellow      - Hope and happiness
+========================================================= */
+
+
+/* =========================================================
+   1. CSS VARIABLES
+========================================================= */
+
+:root {
+
+    --forest-green: #1f5d45;
+    --deep-green: #164936;
+    --sage-green: #5e9c76;
+    --light-sage: #e8f2eb;
+
+    --cream: #fff9f0;
+    --warm-white: #ffffff;
+
+    --coral: #e9826e;
+    --coral-dark: #d96d5b;
+
+    --yellow: #f4c95d;
+    --yellow-light: #fff3c9;
+
+    --dark-text: #26332d;
+    --medium-text: #53635b;
+    --light-text: #718078;
+
+    --border: #dce6df;
+
+    --shadow-light: 0 8px 25px rgba(31, 93, 69, 0.08);
+    --shadow-medium: 0 15px 40px rgba(31, 93, 69, 0.12);
+
+    --border-radius: 18px;
+    --small-radius: 10px;
+
+    --max-width: 1200px;
+
+}
+
+
+/* =========================================================
+   2. GENERAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-text);
+    line-height: 1.7;
+}
+
+
+/* Prevent images from overflowing their containers */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Remove default link styling */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Make buttons and form elements use the same font */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   3. GENERAL CONTAINERS
+========================================================= */
+
+.section-container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+
+.section-spacing {
+    padding: 6.25rem 0;
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--dark-text);
+}
+
+
+h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+}
+
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+
+h3 {
+    font-size: 1.4rem;
+}
+
+
+p {
+    color: var(--medium-text);
+}
+
+
+.section-label,
+.eyebrow {
+    color: var(--coral-dark);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+
+h1 span,
+h2 span {
+    color: var(--forest-green);
+}
+
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+
+.section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.section-heading p:last-child {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   5. HEADER AND NAVIGATION
+========================================================= */
+
+header {
+    background-color: var(--warm-white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.navbar {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    min-height: 5.125rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Organisation logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--light-sage);
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+}
+
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+
+.logo-text strong {
+    color: var(--forest-green);
+    font-size: 1.4rem;
+}
+
+
+.logo-text small {
+    color: var(--coral-dark);
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 2.1875rem;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    color: var(--dark-text);
+    font-size: 0.95rem;
+    font-weight: bold;
+
+    padding: 0.625rem 0;
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--forest-green);
+}
+
+
+/* Underline for active navigation */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background-color: var(--coral);
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* Mobile menu button */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: none;
+
+    font-size: 1.8rem;
+    color: var(--forest-green);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   6. BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.875rem 1.75rem;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+    font-size: 0.95rem;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+
+.btn-primary {
+    background-color: var(--coral);
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(233, 130, 110, 0.25);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--coral-dark);
+}
+
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--forest-green);
+
+    border-color: var(--forest-green);
+}
+
+
+.btn-secondary:hover {
+    background-color: var(--forest-green);
+    color: white;
+}
+
+
+.btn-light {
+    background-color: white;
+    color: var(--forest-green);
+}
+
+
+.btn-light:hover {
+    background-color: var(--yellow-light);
+}
+
+
+/* =========================================================
+   7. HOMEPAGE HERO
+========================================================= */
+
+.hero {
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 249, 240, 0.98) 0%,
+            rgba(255, 249, 240, 0.88) 45%,
+            rgba(255, 249, 240, 0.25) 100%
+        ),
+
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-content {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    max-width: 650px;
+}
+
+
+.hero h1 {
+    margin-bottom: 25px;
+}
+
+
+.hero-description {
+    max-width: 580px;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+}
+
+
+/* =========================================================
+   8. PAGE BANNER
+========================================================= */
+
+.page-banner {
+    padding: 6.875rem 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(244, 201, 93, 0.35),
+            transparent 35%
+        ),
+
+        var(--light-sage);
+}
+
+
+.page-banner .section-container {
+    max-width: 900px;
+}
+
+
+.page-banner h1 {
+    margin-bottom: 20px;
+}
+
+
+.page-banner p:last-child {
+    max-width: 650px;
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   9. TWO COLUMN LAYOUTS
+========================================================= */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4.375rem;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   10. IMAGE HANDLING
+========================================================= */
+
+/*
+   IMPORTANT IMAGE RULE
+
+   Images use object-fit: contain.
+
+   This means the ENTIRE image remains visible.
+   It will NOT be cropped, stretched or zoomed.
+
+   If an image has different proportions from its
+   container, some empty space may remain around it.
+   This is intentional because we do not want to
+   cut any part of the photograph.
+*/
+
+
+.image-content {
+    width: 100%;
+
+    min-height: 400px;
+
+    background-color: var(--light-sage);
+
+    border-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image-content img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 400px;
+
+    object-fit: contain;
+
+    background-color: var(--light-sage);
+}
+
+
+/*
+   General content images
+
+   contain = show the entire image.
+*/
+
+img {
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   11. INTRODUCTION SECTION
+========================================================= */
+
+.intro-section {
+    padding: 6.25rem 0;
+
+    background-color: var(--warm-white);
+}
+
+
+.text-content h2 {
+    margin-bottom: 25px;
+}
+
+
+.text-content p {
+    margin-bottom: 18px;
+}
+
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--forest-green);
+
+    font-weight: bold;
+
+    border-bottom: 2px solid var(--yellow);
+}
+
+
+.text-link:hover {
+    color: var(--coral-dark);
+}
+
+
+/* =========================================================
+   12. SERVICES PREVIEW
+========================================================= */
+
+.services-preview {
+    padding: 6.25rem 0;
+
+    background-color: var(--cream);
+}
+
+
+.service-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1.25rem;
+}
+
+
+.service-card {
+    background-color: white;
+
+    padding: 1.875rem 1.5625rem;
+
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--yellow-light);
+
+    border-radius: 18px;
+
+    font-size: 1.7rem;
+
+    margin-bottom: 20px;
+}
+
+
+.service-card h3 {
+    margin-bottom: 12px;
+}
+
+
+.service-card p {
+    font-size: 0.95rem;
+}
+
+
+/* Center button */
+
+.center-button {
+    text-align: center;
+    margin-top: 45px;
+}
+
+
+/* =========================================================
+   13. ANIMAL CARDS
+========================================================= */
+
+.animals-preview {
+    padding: 6.25rem 0;
+
+    background-color: var(--warm-white);
+}
+
+
+.animal-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5625rem;
+}
+
+
+.animal-card {
+    background-color: white;
+
+    border-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-light);
+
+    transition: transform 0.3s ease;
+}
+
+
+.animal-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/*
+   Animal images have a fixed viewing area.
+
+   object-fit: contain ensures the complete photo
+   remains visible instead of being cropped.
+*/
+
+.animal-image {
+    width: 100%;
+    height: 300px;
+
+    background-color: var(--light-sage);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.animal-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.animal-status {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    background-color: var(--forest-green);
+    color: white;
+
+    padding: 0.375rem 0.75rem;
+
+    border-radius: 50px;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+.animal-details {
+    padding: 1.5625rem;
+}
+
+
+.animal-details h3 {
+    margin-bottom: 5px;
+}
+
+
+.animal-meta {
+    color: var(--coral-dark);
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+.animal-details p {
+    margin-bottom: 12px;
+}
+
+
+.animal-details a {
+    color: var(--forest-green);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   14. CTA SECTION
+========================================================= */
+
+.cta-section {
+    padding: 6.25rem 1.25rem;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(244, 201, 93, 0.25),
+            transparent 25%
+        ),
+
+        var(--forest-green);
+
+    text-align: center;
+}
+
+
+.cta-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+.cta-section .section-label {
+    color: var(--yellow);
+}
+
+
+.cta-section h2 {
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+
+.cta-section h2 span {
+    color: var(--yellow);
+}
+
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.85);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   15. MISSION AND VISION
+========================================================= */
+
+.mission-section {
+    padding: 6.25rem 0;
+
+    background-color: var(--light-sage);
+}
+
+
+.mission-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.875rem;
+}
+
+
+.mission-card {
+    background-color: white;
+
+    padding: 2.8125rem;
+
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-light);
+}
+
+
+.mission-icon {
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+
+.mission-card h2 {
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   16. VALUES
+========================================================= */
+
+.values-section {
+    background-color: var(--cream);
+}
+
+
+.value-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1.25rem;
+}
+
+
+.value-card {
+    text-align: center;
+
+    padding: 2.1875rem 1.5625rem;
+
+    background-color: white;
+
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--border);
+}
+
+
+.value-icon {
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+
+.value-card h3 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   17. TEAM
+========================================================= */
+
+.team-section {
+    background-color: var(--warm-white);
+}
+
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5625rem;
+}
+
+
+.team-card {
+    background-color: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-light);
+}
+
+
+.team-card img {
+    width: 100%;
+    height: 280px;
+
+    background-color: var(--light-sage);
+
+    object-fit: contain;
+}
+
+
+.team-card div {
+    padding: 1.25rem;
+}
+
+
+.team-card h3 {
+    margin-bottom: 5px;
+}
+
+
+.team-card p {
+    color: var(--coral-dark);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   18. SERVICES PAGE
+========================================================= */
+
+.services-section {
+    background-color: var(--cream);
+}
+
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.875rem;
+}
+
+
+.service-large-card {
+    background-color: white;
+
+    border-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-light);
+
+    transition: transform 0.3s ease;
+}
+
+
+.service-large-card:hover {
+    transform: translateY(-6px);
+}
+
+
+.service-card-image {
+    width: 100%;
+    height: 300px;
+
+    background-color: var(--light-sage);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.service-card-content {
+    padding: 1.875rem;
+}
+
+
+.service-number {
+    color: var(--coral);
+
+    font-weight: bold;
+
+    font-size: 0.85rem;
+}
+
+
+.service-card-content h3 {
+    margin: 0.5rem 0 0.75rem;
+
+    font-size: 1.7rem;
+}
+
+
+/* =========================================================
+   19. ADOPTION INFORMATION
+========================================================= */
+
+.adoption-info {
+    background-color: var(--warm-white);
+}
+
+
+/* =========================================================
+   20. ENQUIRY PAGE
+========================================================= */
+
+.enquiry-intro {
+    background-color: var(--cream);
+}
+
+
+.involvement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5625rem;
+}
+
+
+.involvement-card {
+    padding: 2.1875rem;
+
+    background-color: white;
+
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+
+    box-shadow: var(--shadow-light);
+}
+
+
+.involvement-icon {
+    font-size: 2.2rem;
+
+    margin-bottom: 15px;
+}
+
+
+.involvement-card h3 {
+    margin-bottom: 12px;
+}
+
+
+.form-section {
+    padding: 6.25rem 0;
+
+    background-color: var(--light-sage);
+}
+
+
+.form-container {
+    max-width: 850px;
+}
+
+
+.form-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.form-heading h2 {
+    margin-bottom: 15px;
+}
+
+
+.enquiry-form,
+.contact-form {
+    background-color: white;
+
+    padding: 2.8125rem;
+
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.25rem;
+}
+
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+.form-group label,
+.form-group legend {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: var(--dark-text);
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 0.875rem 1rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--small-radius);
+
+    background-color: var(--cream);
+
+    color: var(--dark-text);
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--sage-green);
+
+    box-shadow: 0 0 0 3px rgba(94, 156, 118, 0.15);
+}
+
+
+textarea {
+    resize: vertical;
+
+    min-height: 150px;
+}
+
+
+fieldset {
+    border: none;
+}
+
+
+.radio-options {
+    display: flex;
+
+    gap: 1.875rem;
+}
+
+
+.radio-options label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    font-weight: normal;
+}
+
+
+.radio-options input {
+    width: auto;
+}
+
+
+.form-message {
+    margin-top: 20px;
+
+    padding: 0.9375rem;
+
+    border-radius: var(--small-radius);
+
+    display: none;
+}
+
+
+.form-message.success {
+    display: block;
+
+    background-color: var(--light-sage);
+
+    color: var(--forest-green);
+}
+
+
+.form-message.error {
+    display: block;
+
+    background-color: #fde9e5;
+
+    color: #a84332;
+}
+
+
+/* =========================================================
+   21. CONTACT PAGE
+========================================================= */
+
+.contact-section {
+    background-color: var(--cream);
+}
+
+
+.location-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.875rem;
+}
+
+
+.location-card {
+    background-color: white;
+
+    padding: 2.1875rem;
+
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-light);
+}
+
+
+.location-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--yellow-light);
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+}
+
+
+.location-card h3 {
+    margin-bottom: 15px;
+}
+
+
+.location-card p {
+    margin-bottom: 12px;
+}
+
+
+.location-address {
+    font-size: 1rem;
+
+    color: var(--dark-text);
+}
+
+
+/*
+   These are temporary map areas.
+
+   They can later be replaced with actual
+   embedded Google Maps if required.
+*/
+
+.map-placeholder {
+    height: 220px;
+
+    margin-top: 25px;
+
+    background-color: var(--light-sage);
+
+    border-radius: var(--small-radius);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.map-placeholder span {
+    font-size: 2rem;
+}
+
+
+.map-placeholder p {
+    color: var(--forest-green);
+
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+
+/* Contact form layout */
+
+.contact-form-section {
+    background-color: var(--warm-white);
+}
+
+
+.contact-form-layout {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 3.75rem;
+
+    align-items: start;
+}
+
+
+.contact-form-intro h2 {
+    margin-bottom: 20px;
+}
+
+
+.contact-details {
+    margin-top: 30px;
+}
+
+
+.contact-details p {
+    margin-bottom: 12px;
+
+    color: var(--forest-green);
+}
+
+
+/* Opening hours */
+
+.hours-section {
+    padding: 4.375rem 0;
+
+    background-color: var(--light-sage);
+}
+
+
+.hours-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2.5rem;
+}
+
+
+.hours-list {
+    min-width: 400px;
+}
+
+
+.hours-list div {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 1.875rem;
+
+    padding: 0.9375rem 0;
+
+    border-bottom: 1px solid rgba(31, 93, 69, 0.15);
+}
+
+
+.hours-list span {
+    color: var(--medium-text);
+}
+
+
+.hours-list strong {
+    color: var(--forest-green);
+}
+
+
+/* =========================================================
+   22. FOOTER
+========================================================= */
+
+footer {
+    background-color: var(--deep-green);
+
+    color: white;
+}
+
+
+.footer-container {
+    width: 90%;
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 4.375rem 0 3.125rem;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 3.125rem;
+}
+
+
+.footer-about .logo-text strong {
+    color: white;
+}
+
+
+.footer-about .logo-text small {
+    color: var(--yellow);
+}
+
+
+.footer-about p {
+    color: rgba(255, 255, 255, 0.75);
+
+    max-width: 350px;
+
+    margin-top: 20px;
+}
+
+
+.footer-links,
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-links h3,
+.footer-contact h3 {
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+
+    margin-bottom: 8px;
+
+    transition: color 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: var(--yellow);
+}
+
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.75);
+
+    margin-bottom: 8px;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 1.25rem;
+
+    text-align: center;
+}
+
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   23. RESPONSIVE DESIGN - TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .service-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .animal-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .value-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   24. RESPONSIVE DESIGN - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .section-spacing {
+        padding: 4.375rem 0;
+    }
+
+
+    /* Mobile navigation */
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .nav-links {
+        position: absolute;
+
+        top: 5.125rem;
+        left: 0;
+
+        width: 100%;
+
+        background-color: white;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 0.9375rem 0;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+
+        display: none;
+    }
+
+
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    .nav-links li {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .nav-links a {
+        display: block;
+
+        padding: 0.9375rem;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 650px;
+
+        background:
+            linear-gradient(
+                rgba(255, 249, 240, 0.88),
+                rgba(255, 249, 240, 0.88)
+            ),
+
+            url("../images/hero.jpg");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .btn {
+        width: 100%;
+    }
+
+
+    /* Two columns become one */
+
+    .two-column {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+    }
+
+
+    /* Service cards */
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .animal-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .involvement-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Forms */
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .enquiry-form,
+    .contact-form {
+        padding: 1.5625rem;
+    }
+
+
+    /* Hours */
+
+    .hours-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .hours-list {
+        min-width: 100%;
+
+        width: 100%;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 2.1875rem;
+    }
+
+}
+
+
+/* =========================================================
+   25. VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .logo-text strong {
+        font-size: 1.2rem;
+    }
+
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+
+    .page-banner {
+        padding: 5rem 0;
+    }
+
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+}
