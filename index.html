@@ -309,10 +309,28 @@
                 </div>
 
 
-                <div class="animal-cards">
+                <div class="animal-tools" aria-label="Find an animal to adopt">
+                    <label for="animalSearch">Search by name</label>
+                    <input type="search" id="animalSearch" placeholder="e.g. Buddy" autocomplete="off">
+                    <label for="animalSpecies">Animal type</label>
+                    <select id="animalSpecies">
+                        <option value="all">All animals</option>
+                        <option value="dog">Dogs</option>
+                        <option value="cat">Cats</option>
+                    </select>
+                    <label for="animalSort">Sort by</label>
+                    <select id="animalSort">
+                        <option value="name">Name (A–Z)</option>
+                        <option value="age-young">Age (youngest first)</option>
+                        <option value="age-old">Age (oldest first)</option>
+                    </select>
+                </div>
+                <p id="animalResults" class="animal-results" aria-live="polite">Showing all 3 animals.</p>
+
+                <div class="animal-cards" id="animalCards">
 
                     <!-- Buddy -->
-                    <article class="animal-card">
+                    <article class="animal-card" data-name="Buddy" data-species="dog" data-age="3">
 
                         <div class="animal-image">
 
@@ -350,7 +368,7 @@
 
 
                     <!-- Luna -->
-                    <article class="animal-card">
+                    <article class="animal-card" data-name="Luna" data-species="cat" data-age="2">
 
                         <div class="animal-image">
 
@@ -388,7 +406,7 @@
 
 
                     <!-- Milo -->
-                    <article class="animal-card">
+                    <article class="animal-card" data-name="Milo" data-species="dog" data-age="0.67">
 
                         <div class="animal-image">
 

@@ -14,6 +14,8 @@
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Leaflet map styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 
 </head>
 
@@ -168,17 +170,6 @@
                             Saturday: 09:00 – 14:00
                         </p>
 
-                        <!-- Map placeholder -->
-                        <div class="map-placeholder">
-
-                            <span>📍</span>
-
-                            <p>
-                                Southern Branch Map
-                            </p>
-
-                        </div>
-
                     </article>
 
 
@@ -215,19 +206,14 @@
                             Saturday: 09:00 – 14:00
                         </p>
 
-                        <!-- Map placeholder -->
-                        <div class="map-placeholder">
-
-                            <span>📍</span>
-
-                            <p>
-                                Northern Branch Map
-                            </p>
-
-                        </div>
-
                     </article>
 
+                </div>
+
+                <div class="branch-map-wrap">
+                    <h3>Explore our Cape Town branch areas</h3>
+                    <p class="map-note">Map markers show the general Diep River and Table View areas, not verified street-level pin locations.</p>
+                    <div id="branchMap" class="branch-map" role="application" aria-label="Interactive map showing the general areas of the Paws Southern and Northern branches"></div>
                 </div>
 
             </div>
