@@ -1,16 +1,21 @@
-# Security headers for Netlify (GitHub Pages ignores this file;
-# the pages also include a Content-Security-Policy meta tag).
+# Netlify only. The live site is hosted on Vercel, which ignores this file
+# and reads the same headers from vercel.json instead. This copy is kept so
+# the site still gets its security headers if it is ever deployed to Netlify.
+# The Content-Security-Policy is set by a <meta> tag on every page.
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-# Page speed: let browsers cache images, CSS and JS for a week
+# Page speed: browsers may cache images for a week. A replaced image must be
+# saved under a new file name, otherwise visitors may see the old one for a week.
+# CSS and JS keep their file names when edited, so browsers check for a newer
+# version on every visit (a quick 304 response when nothing has changed).
 /images/*
   Cache-Control: public, max-age=604800
 /css/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate
 /js/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate

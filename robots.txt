@@ -6,4 +6,4 @@ User-agent: *
 Allow: /
 Disallow: /README.md
 
-Sitemap: https://zipho-r.github.io/Animal-Rescue-Website-Part-2/sitemap.xml
+Sitemap: https://animal-rescue-website-part-3.vercel.app/sitemap.xml
