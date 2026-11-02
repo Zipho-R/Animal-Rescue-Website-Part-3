@@ -1,0 +1,16 @@
+# Security headers for Netlify (GitHub Pages ignores this file;
+# the pages also include a Content-Security-Policy meta tag).
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Page speed: let browsers cache images, CSS and JS for a week
+/images/*
+  Cache-Control: public, max-age=604800
+/css/*
+  Cache-Control: public, max-age=604800
+/js/*
+  Cache-Control: public, max-age=604800

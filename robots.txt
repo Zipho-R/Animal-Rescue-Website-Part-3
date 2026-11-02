@@ -1,0 +1,9 @@
+# robots.txt - tells search engine crawlers what they may index.
+# All public pages may be crawled. Script and style folders are allowed
+# so Google can render the pages properly.
+
+User-agent: *
+Allow: /
+Disallow: /README.md
+
+Sitemap: https://zipho-r.github.io/Animal-Rescue-Website-Part-2/sitemap.xml
