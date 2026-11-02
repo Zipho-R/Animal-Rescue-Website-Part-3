@@ -95,13 +95,11 @@ let openProfile = () => {};
     toggle.addEventListener("click", () => {
         const open = links.classList.toggle("show");
         toggle.setAttribute("aria-expanded", String(open));
-        toggle.textContent = open ? "✕" : "☰";
     });
 
     $$("a", links).forEach(link => link.addEventListener("click", () => {
         links.classList.remove("show");
         toggle.setAttribute("aria-expanded", "false");
-        toggle.textContent = "☰";
     }));
 })();
 
@@ -137,7 +135,7 @@ let openProfile = () => {};
         const imageWrap = el("div", "animal-image");
         imageWrap.appendChild(buildAnimalImage(animal, "(max-width: 760px) 92vw, (max-width: 1000px) 45vw, 380px"));
         const status = el("span", "animal-status" + (animal.status !== "Available" ? " is-pending" : ""), animal.status);
-        const kind = el("span", "animal-species", animal.species === "dog" ? "🐶 Dog" : "🐱 Cat");
+        const kind = el("span", "animal-species", animal.species === "dog" ? "Dog" : "Cat");
         imageWrap.append(status, kind);
 
         const details = el("div", "animal-details");
@@ -252,7 +250,7 @@ let openProfile = () => {};
         photo.replaceChildren(img);
 
         field("status").textContent = animal.status;
-        field("species").textContent = animal.species === "dog" ? "🐶 Dog" : "🐱 Cat";
+        field("species").textContent = animal.species === "dog" ? "Dog" : "Cat";
         field("name").textContent = animal.name;
         field("meta").textContent = `${animal.breed} · ${animal.ageLabel} · ${animal.sex}`;
         field("personality").textContent = animal.personality;
@@ -574,7 +572,7 @@ function showMessage(box, type, text) {
     if (match) {
         typeField.value = "adoption";
         animalField.value = match.id;
-        showMessage($("#animalNotice"), "info", `🐾 You're enquiring about ${match.name}. We've filled in the enquiry type and animal for you – just add your details.`);
+        showMessage($("#animalNotice"), "info", `You're enquiring about ${match.name}. We've filled in the enquiry type and animal for you – just add your details.`);
     }
     updateVisibleFields();
     attachLiveValidation(form);
@@ -754,7 +752,7 @@ function showMessage(box, type, text) {
         $("#copyEmailButton").onclick = async () => {
             try {
                 await navigator.clipboard.writeText(`To: ${RECIPIENT}\nSubject: ${subject}\n\n${body}`);
-                $("#copyEmailButton").textContent = "Copied ✓";
+                $("#copyEmailButton").textContent = "Copied";
             } catch (error) {
                 $("#copyEmailButton").textContent = "Copy failed – select the text instead";
             }

@@ -101,6 +101,7 @@ Animal-Rescue-Website/
 - **JavaScript (ES6+)**: DOM manipulation, event delegation, `IntersectionObserver`, the Fetch API (AJAX), `FormData`, `URLSearchParams` and the Clipboard API.
 - **Leaflet 1.9.4** with **OpenStreetMap** tiles for the interactive map.
 - **Google Fonts**: Fredoka (headings) and Nunito (body text).
+- **Lucide icons**: inline SVG icons (no emojis are used anywhere on the site).
 - **JSONPlaceholder**: a free test API used to demonstrate AJAX form submission.
 
 ---
@@ -272,7 +273,7 @@ The interim commit "Add interactive Part 3 website features" (an early draft of 
 - Added interactive tabs, a gallery lightbox and a scroll reveal.
 - Map: branch markers fit the view automatically; "Show on map" buttons on each location card.
 - Opening hours highlight today's day automatically.
-- Mobile menu button now updates `aria-expanded` and switches between ☰ and ✕.
+- Mobile menu button now updates `aria-expanded` and switches between a menu icon and a close icon.
 
 #### Forms
 - Enquiry form: conditional fields, full format validation, per-field error messages, live character counter, AJAX submission with `fetch()`, and a cost/availability response (see Section 11).
@@ -292,6 +293,11 @@ The interim commit "Add interactive Part 3 website features" (an early draft of 
 #### Home page and footer clean-up
 - **Removed the made-up statistics:** the green statistics band on `index.html` (1 240+ animals rehomed, 180 volunteers, 65 foster families, 2 branches) and the two floating stickers on the hero photo ("1 240+ happy adoptions" and "6 pets waiting for you") were removed, because the figures were not real. The unused counter script and the stats/sticker styles were deleted from `js/script.js` and `css/style.css`.
 - **Simpler footer on every page:** the footer now has only three columns: *Get involved* (adopt, volunteer or foster, sponsor, contact), *Visit us* (both addresses, phone and email) and *FAQs* (link to the adoption FAQs). The logo, tagline and social media icons were removed, and the "Explore" links (Home, About us, Our services) were removed because they repeat the navigation bar.
+
+#### Emojis replaced with icons
+- **All emojis removed:** emojis display differently on every device (and sometimes not at all), and screen readers can read them out. Every emoji in the HTML, CSS and JavaScript was removed.
+- **SVG icons instead:** where an icon helps, the emoji was replaced with an inline SVG icon from the open-source Lucide icon set (paw print logo and favicon, menu and close buttons, card icons such as house, sofa, hand, heart, stethoscope, sprout, lifebuoy, target, globe, shield, sun and map pin, and check marks). The icons are drawn in the HTML, so they need no extra download and are allowed by the Content-Security-Policy. They use `currentColor`, so they follow the site's colours, and they have `aria-hidden="true"` so screen readers skip them.
+- **Emoji with no icon:** the dog/cat emojis on the animal badges, the paw at the start of the enquiry notice and the tick after "Copied" were removed; the text alone is used.
 
 #### Documentation
 - README updated with Part 3 functionality, forms, SEO, deployment instructions, this changelog and a references list.
@@ -325,6 +331,8 @@ Google Fonts, 2026. *Fredoka* and *Nunito*. [online] Available at: <https://font
 JSONPlaceholder, 2026. *Free fake and reliable API for testing and prototyping*. [online] Available at: <https://jsonplaceholder.typicode.com> [Accessed 2 November 2026].
 
 Leaflet, 2026. *Leaflet: an open-source JavaScript library for interactive maps* (version 1.9.4). [online] Available at: <https://leafletjs.com> [Accessed 2 November 2026].
+
+Lucide, 2026. *Lucide icons* (ISC licence). [online] Available at: <https://lucide.dev> [Accessed 2 November 2026].
 
 MDN Web Docs, 2026. *Client-side form validation*. [online] Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation> [Accessed 2 November 2026].
 
