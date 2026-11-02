@@ -231,18 +231,6 @@ p { color: var(--text); max-width: 68ch; }
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 
-.sticker {
-    position: absolute; z-index: 2;
-    background: var(--white); border: 3px solid var(--black); border-radius: var(--radius);
-    padding: 0.7rem 1rem; box-shadow: var(--shadow-pop);
-    font-weight: 800; line-height: 1.25;
-    animation: bob 4s ease-in-out infinite;
-}
-.sticker strong { display: block; font-family: var(--font-head); font-size: 1.6rem; color: var(--green-dark); }
-.sticker-top { top: 10%; left: -8%; }
-.sticker-bottom { bottom: 6%; right: -4%; animation-delay: -2s; background: var(--green); }
-.sticker-bottom strong { color: var(--black); }
-
 @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
 
 /* ---------- 7. MOVING TICKER BAND ---------- */
@@ -258,12 +246,6 @@ p { color: var(--text); max-width: 68ch; }
 .ticker-track span:nth-child(3n+2) { color: var(--green); }
 .ticker:hover .ticker-track { animation-play-state: paused; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* ---------- 8. STATS BAND ---------- */
-.stats { background: var(--green); padding: 3rem 0; border-bottom: 3px solid var(--black); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; }
-.stat-number { font-family: var(--font-head); font-size: clamp(2.4rem, 4.5vw, 3.4rem); color: var(--black); line-height: 1; }
-.stat-label { font-weight: 800; color: var(--black); margin: 0.5rem auto 0; }
 
 /* ---------- 9. PAGE BANNER (inner pages) ---------- */
 .page-banner {
@@ -624,24 +606,13 @@ fieldset { border: 0; }
 
 /* ---------- 23. FOOTER ---------- */
 .site-footer { background: var(--black); color: var(--white); }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; padding: 4rem 0 3rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; padding: 4rem 0 3rem; }
 .site-footer p, .site-footer a { color: #E9E9E9; }
 .site-footer h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 1rem; }
-.site-footer .logo-text strong { color: var(--white); }
-.site-footer .logo-text small { color: var(--green); }
-.footer-about p { margin-top: 1rem; }
 .footer-links { list-style: none; display: grid; gap: 0.45rem; }
 .footer-links a { text-decoration: none; }
 .footer-links a:hover { color: var(--orange); text-decoration: underline; }
-.social-links { display: flex; gap: 0.6rem; list-style: none; margin-top: 1rem; }
-.social-links a {
-    width: 42px; height: 42px; border-radius: 50%; background: var(--orange); color: var(--black);
-    display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 800;
-}
-.social-links li:nth-child(2) a { background: var(--green); }
-.social-links li:nth-child(3) a { background: var(--white); }
-.social-links a:hover { transform: translateY(-3px); }
-.footer-bottom { border-top: 1px solid #333; padding: 1.25rem 0; text-align: center; font-size: 0.9rem; }
+.footer-bottom { border-top: 1px solid #333; padding: 1.25rem 5%; text-align: center; font-size: 0.9rem; }
 .footer-bottom p { margin: 0 auto; }
 
 /* ---------- 24. SCROLL REVEAL (single gentle effect) ---------- */
@@ -656,7 +627,6 @@ fieldset { border: 0; }
     .card-grid-4, .steps { grid-template-columns: repeat(2, 1fr); }
     .steps { row-gap: 2.5rem; }
     .card-grid-3, .animal-cards { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .form-layout, .tab-panel { grid-template-columns: 1fr; }
     .form-aside { position: static; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -676,8 +646,6 @@ fieldset { border: 0; }
     .nav-links a { text-align: center; padding: 0.8rem; }
     .two-column, .card-grid-2, .card-grid-3, .card-grid-4, .animal-cards, .steps, .form-row { grid-template-columns: 1fr; }
     .animal-tools { grid-template-columns: 1fr; }
-    .sticker-top { left: 0; }
-    .sticker-bottom { right: 0; }
     .modal-facts { grid-template-columns: 1fr; }
     .modal-content { padding: 1.4rem; }
     .modal-photo { height: 40vh; }
@@ -695,7 +663,6 @@ fieldset { border: 0; }
     .gallery { grid-template-columns: 1fr; }
     .gallery-item.wide { grid-column: auto; }
     .gallery-item.tall { grid-row: auto; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* ---------- 27. REDUCED MOTION ---------- */

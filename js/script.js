@@ -10,11 +10,10 @@
    6.  FAQ accordion
    7.  Tabs
    8.  Gallery lightbox
-   9.  Animated counters + scroll reveal
-   10. Leaflet map
-   11. Form validation helpers
-   12. Enquiry form (validation, cost/availability, AJAX)
-   13. Contact form (validation, compiled email)
+   9.  Leaflet map
+   10. Form validation helpers
+   11. Enquiry form (validation, cost/availability, AJAX)
+   12. Contact form (validation, compiled email)
 
    Security note: all visitor input is inserted into the page
    with textContent (never innerHTML) to prevent HTML/script
@@ -389,37 +388,8 @@ let openProfile = () => {};
     });
 })();
 
-/* ---------- 9. COUNTERS (scroll reveal set up in section 1) ---------- */
 
-(function initCounters() {
-    const counters = $$("[data-count]");
-    if (!counters.length) return;
-
-    function run(counter) {
-        const target = Number(counter.dataset.count);
-        const suffix = counter.dataset.suffix || "";
-        if (prefersReducedMotion) { counter.textContent = target.toLocaleString("en-ZA") + suffix; return; }
-        const start = performance.now();
-        const duration = 1600;
-        function frame(now) {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            counter.textContent = Math.round(target * eased).toLocaleString("en-ZA") + suffix;
-            if (progress < 1) requestAnimationFrame(frame);
-        }
-        requestAnimationFrame(frame);
-    }
-
-    if (!("IntersectionObserver" in window)) { counters.forEach(run); return; }
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) { run(entry.target); observer.unobserve(entry.target); }
-        });
-    }, { threshold: 0.5 });
-    counters.forEach(counter => observer.observe(counter));
-})();
-
-/* ---------- 10. LEAFLET MAP (contact page) ---------- */
+/* ---------- 9. LEAFLET MAP (contact page) ---------- */
 (function initMap() {
     const mapElement = $("#branchMap");
     if (!mapElement) return;
@@ -455,7 +425,7 @@ let openProfile = () => {};
     });
 })();
 
-/* ---------- 11. FORM VALIDATION HELPERS ---------- */
+/* ---------- 10. FORM VALIDATION HELPERS ---------- */
 const patterns = {
     name: /^[A-Za-zÀ-ÿ' -]{2,50}$/,
     email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
@@ -545,7 +515,7 @@ function showMessage(box, type, text) {
     box.hidden = false;
 }
 
-/* ---------- 12. ENQUIRY FORM ---------- */
+/* ---------- 11. ENQUIRY FORM ---------- */
 (function initEnquiryForm() {
     const form = $("#enquiryForm");
     if (!form) return;
@@ -734,7 +704,7 @@ function showMessage(box, type, text) {
     });
 })();
 
-/* ---------- 13. CONTACT FORM ---------- */
+/* ---------- 12. CONTACT FORM ---------- */
 (function initContactForm() {
     const form = $("#contactForm");
     if (!form) return;

@@ -46,7 +46,7 @@ People interested in adopting a pet, animal lovers, potential volunteers, sponso
 
 | Page | File | Main content |
 |---|---|---|
-| Home | `index.html` | Hero, moving ticker, animated statistics, introduction, services preview, **searchable animal directory with profile pop-ups**, adoption steps, testimonial, call to action |
+| Home | `index.html` | Hero, moving ticker, introduction, services preview, **searchable animal directory with profile pop-ups**, adoption steps, testimonial, call to action |
 | About Us | `about.html` | Our story, mission and vision, values, milestones timeline, team, **photo gallery with lightbox** |
 | Services | `services.html` | Six services, **"Ways to help" tabs** with fees, adoption information, **FAQ accordion** |
 | Enquiry | `enquiry.html` | Ways to get involved, **enquiry form** with validation, AJAX submission and a cost/availability response |
@@ -111,14 +111,14 @@ Part 3 replaced the softer green/cream palette with a brighter, happier one buil
 
 | Colour | Hex | Use |
 |---|---|---|
-| Orange | `#FF6A00` | Buttons, highlights, banners and stickers |
-| Green | `#00A651` / dark `#007F3F` | Statistics band, tags, links and the call-to-action band |
+| Orange | `#FF6A00` | Buttons, highlights and banners |
+| Green | `#00A651` / dark `#007F3F` | Tags, links and the call-to-action band |
 | Black | `#111111` | Text, outlines and the moving ticker |
 | White | `#FFFFFF` | Main background |
 
 Pale tints of orange and green separate the sections. Black text is used on orange and bright green, and white text only on dark green or black, so all text meets WCAG contrast guidelines.
 
-Rounded fonts, thick black outlines and "sticker" shadows give the site a cheerful, playful character that suits a happy rescue organisation. A repeating paw-print pattern, a moving word ticker, floating stickers, count-up numbers and a gentle scroll reveal add motion and fill the empty spaces. All animations stop automatically for visitors who turn on "reduce motion" in their device settings.
+Rounded fonts, thick black outlines and "sticker" shadows give the site a cheerful, playful character that suits a happy rescue organisation. A repeating paw-print pattern, a moving word ticker, gently floating banner photos and a scroll reveal add motion and fill the empty spaces. All animations stop automatically for visitors who turn on "reduce motion" in their device settings.
 
 ---
 
@@ -130,7 +130,7 @@ Rounded fonts, thick black outlines and "sticker" shadows give the site a cheerf
 | Tabs | "Ways to help" on `services.html` (Adopt / Foster / Volunteer / Sponsor; arrow-key navigation) |
 | Modal | Animal profile pop-up on `index.html` (Escape to close, focus kept inside, returns focus afterwards) |
 | Interactive map | Leaflet + OpenStreetMap on `contact.html`; "Show on map" buttons fly the map to each branch |
-| Animations and transitions | Moving ticker, floating stickers, animated counters, scroll reveal, button and card hover effects, pop-in dialogs |
+| Animations and transitions | Moving ticker, floating banner photos, scroll reveal, button and card hover effects, pop-in dialogs |
 | Advanced DOM manipulation | Animal cards, filters, profile modal, lightbox, enquiry results and email preview are all built with `createElement`, `replaceChildren` and `textContent` |
 | Gallery with lightbox | "Life at Paws" gallery on `about.html` (previous/next buttons, arrow keys, captions) |
 | Dynamically loaded content | Adoption cards (`index.html`) and the animal list in the enquiry form are generated from `js/animals.js` |
@@ -167,11 +167,11 @@ For general messages to the organisation.
 - **Header tags:** each page has exactly one `<h1>`, followed by `<h2>` section headings and `<h3>` card headings.
 - **Image optimisation:** images were renamed descriptively (for example `dog-2.jpg` became `labrador-buddy.jpg`), compressed, and given detailed alt text, `width`/`height` attributes and responsive `srcset` versions.
 - **Clean URLs:** short, lowercase, descriptive file names (`about.html`, `services.html`, and so on).
-- **Internal linking:** contextual links between pages (service cards link to `services.html#…`, footer links, "Apply to adopt" links to the enquiry form).
+- **Internal linking:** contextual links between pages (service cards link to `services.html#…`, footer links to the enquiry form, contact page and FAQs, "Apply to adopt" links to the enquiry form). The footer does not repeat the main navigation links..
 - **Mobile-friendliness:** responsive layouts at 1000px, 760px and 420px, a mobile menu, and touch-sized buttons.
 
 ### Off-page SEO
-- **Social media:** footer links to Facebook, Instagram and TikTok, plus Open Graph and Twitter Card tags so shared links display a title, description and image.
+- **Social media:** Open Graph and Twitter Card tags so shared links display a title, description and image.
 - **Local SEO:** `AnimalShelter` structured data (JSON-LD) with both addresses, phone number and opening hours; `geo` meta tags; addresses, phone numbers and the map on the Contact page.
 - **Backlinks (plan):** listing Paws on Cape Town pet directories, local vet and pet shop partner websites, and community notice boards; guest posts on local pet blogs; and the deployed site link in social media bios.
 
@@ -238,7 +238,7 @@ Online donations, a real database and admin dashboard for animals, volunteer acc
 | Colour scheme | Muted green, coral, yellow, pink and cream | Bright orange `#FF6A00`, green `#00A651`, black and white with WCAG-compliant contrast |
 | Typography | Arial / system fonts | Google Fonts: Fredoka (headings) and Nunito (body) |
 | Images | Generic names (`dog-2.jpg`, `team1.jpg.webp`), some mismatched with their text, blank bands from `object-fit: contain` | Descriptive names (`labrador-buddy.jpg`), photos matched to names/ages/alt text, fixed-shape frames with `object-fit: cover`, regenerated 480/800/1200w versions |
-| Home page | Static featured-animal cards | Searchable, filterable and sortable animal directory built from `js/animals.js`, with profile pop-ups, ticker, counters, adoption steps and testimonial |
+| Home page | Static featured-animal cards | Searchable, filterable and sortable animal directory built from `js/animals.js`, with profile pop-ups, ticker, adoption steps and testimonial |
 | About page | Story, mission, values, team | Adds milestones timeline, team bios and a photo gallery with lightbox |
 | Services page | Six service cards | Adds "Ways to help" tabs with fees and a FAQ accordion (double "+" icon fixed) |
 | Enquiry form | Required-field check and a generic confirmation | Conditional fields, format validation, per-field errors, AJAX `fetch()` submission and a cost/availability response |
@@ -264,12 +264,12 @@ The interim commit "Add interactive Part 3 website features" (an early draft of 
 #### Design
 - New brighter palette of orange, green, black and white (see Section 9), replacing the muted greens, coral and cream.
 - Added Google Fonts (Fredoka and Nunito) for a friendlier look than Arial.
-- Filled empty spaces with more content and motion: a moving word ticker, an animated statistics band, floating stickers in the hero, circular photos in every page banner, a paw-print background pattern, an adoption steps section, a testimonial, a milestones timeline and a photo gallery.
+- Filled empty spaces with more content and motion: a moving word ticker, circular photos in every page banner, a paw-print background pattern, an adoption steps section, a testimonial, a milestones timeline and a photo gallery.
 - Added more text throughout: longer introductions, card descriptions, team bios, location details and six FAQs.
 
 #### Functionality (JavaScript)
 - Animal directory rebuilt from data in `js/animals.js` (dynamic content). Added two more animals (Daisy and Snowy) and a bonded pair (Pip & Pepper) using existing images, an extra "Lowest fee" sort option, trait search and a "no results" message.
-- Added interactive tabs, a gallery lightbox, animated counters and a scroll reveal.
+- Added interactive tabs, a gallery lightbox and a scroll reveal.
 - Map: branch markers fit the view automatically; "Show on map" buttons on each location card.
 - Opening hours highlight today's day automatically.
 - Mobile menu button now updates `aria-expanded` and switches between ☰ and ✕.
@@ -288,6 +288,10 @@ The interim commit "Add interactive Part 3 website features" (an early draft of 
 
 #### Security
 - Added a Content-Security-Policy and referrer policy meta tags on every page, `_headers` with security headers, Subresource Integrity on Leaflet, `rel="noopener noreferrer"` on external links, and safe `textContent` output for all user input.
+
+#### Home page and footer clean-up
+- **Removed the made-up statistics:** the green statistics band on `index.html` (1 240+ animals rehomed, 180 volunteers, 65 foster families, 2 branches) and the two floating stickers on the hero photo ("1 240+ happy adoptions" and "6 pets waiting for you") were removed, because the figures were not real. The unused counter script and the stats/sticker styles were deleted from `js/script.js` and `css/style.css`.
+- **Simpler footer on every page:** the footer now has only three columns: *Get involved* (adopt, volunteer or foster, sponsor, contact), *Visit us* (both addresses, phone and email) and *FAQs* (link to the adoption FAQs). The logo, tagline and social media icons were removed, and the "Explore" links (Home, About us, Our services) were removed because they repeat the navigation bar.
 
 #### Documentation
 - README updated with Part 3 functionality, forms, SEO, deployment instructions, this changelog and a references list.
