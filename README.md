@@ -2,445 +2,294 @@
 
 ## 1. Project Overview
 
-Paws Animal Rescue is a fictional non-profit animal rescue organisation based in Cape Town, South Africa. The organisation focuses on rescuing abandoned, neglected and abused animals and helping them find safe and permanent homes.
+Paws Animal Rescue is a fictional non-profit animal rescue organisation based in Cape Town, South Africa. It rescues abandoned, neglected and abused animals and helps them find safe, permanent homes.
 
-The purpose of this website is to create an accessible online presence for Paws Animal Rescue. The website provides information about the organisation, animals available for adoption, animal rescue services, volunteering, sponsorship, donations and contact information.
+The website gives Paws a friendly online presence. Visitors can learn about the organisation, browse animals available for adoption, read about rescue services, enquire about adopting, fostering, volunteering or sponsoring, and contact the organisation.
 
-The website was developed as part of an academic web development project.
+The website was developed as part of an academic web development project (Parts 1–3).
+
+**Live website:** <https://zipho-r.github.io/Animal-Rescue-Website-Part-2/>  
+**Repository:** <https://github.com/Zipho-R/Animal-Rescue-Website-Part-2>
 
 ---
 
 ## 2. Organisation
 
-### Organisation Name
-
-Paws Animal Rescue
-
-### Organisation Type
-
-Non-Profit Organisation (NPO)
-
-### Location
-
-Cape Town, South Africa
-
-### Mission
-
-The mission of Paws Animal Rescue is to protect vulnerable animals by providing rescue, temporary shelter, veterinary care, rehabilitation and opportunities for adoption.
-
-### Vision
-
-The vision of Paws Animal Rescue is to create a caring community where animals are treated responsibly and fewer animals are abandoned or left without proper care.
+| | |
+|---|---|
+| **Name** | Paws Animal Rescue |
+| **Type** | Non-Profit Organisation (NPO) |
+| **Location** | Cape Town, South Africa (Diep River and Table View branches) |
+| **Mission** | To protect vulnerable animals by providing rescue, care, rehabilitation and adoption services, while teaching the community about responsible pet ownership. |
+| **Vision** | A Cape Town where every pet is wanted, sterilised and cared for, and where no animal is left abandoned, neglected or alone. |
 
 ---
 
 ## 3. Website Goals
 
-The main goals of the website are to:
-
-- Increase awareness of animal rescue and welfare.
-- Provide information about Paws Animal Rescue.
-- Allow visitors to view animals available for adoption.
-- Encourage animal adoption.
-- Encourage members of the public to volunteer.
-- Provide information about donations and sponsorship.
-- Allow visitors to contact the organisation.
-- Provide an easy-to-use and accessible website on different devices.
+- Increase awareness of animal rescue and welfare in Cape Town.
+- Let visitors browse, search and filter animals available for adoption.
+- Encourage adoption, fostering, volunteering and sponsorship.
+- Give instant cost and availability information through the enquiry form.
+- Make it easy to contact the organisation by email, phone or in person.
+- Work well on desktop, tablet and mobile devices.
 
 ---
 
 ## 4. Target Audience
 
-The website is aimed at:
-
-- People interested in adopting animals.
-- Animal lovers.
-- Potential volunteers.
-- Potential sponsors and donors.
-- Foster families.
-- Members of the local community.
-- People looking for information about animal rescue and welfare.
+People interested in adopting a pet, animal lovers, potential volunteers, sponsors and donors, foster families, members of the Cape Town community, and anyone looking for information on animal welfare.
 
 ---
 
 ## 5. Website Pages
 
-The website contains a minimum of five main pages.
-
-### Home Page - `index.html`
-
-The homepage introduces Paws Animal Rescue and provides a brief overview of the organisation.
-
-It contains:
-
-- Hero section
-- Organisation introduction
-- Calls to action
-- Featured animals
-- Rescue services
-- Adoption information
-- Links to other pages
-
-The homepage encourages visitors to explore the website and get involved with the organisation.
-
-### About Us - `about.html`
-
-The About Us page provides information about Paws Animal Rescue.
-
-It includes:
-
-- Organisation background
-- Mission
-- Vision
-- Values
-- Information about the rescue team
-
-### Services - `services.html`
-
-The Services page explains the main services provided by Paws Animal Rescue.
-
-These include:
-
-- Animal rescue
-- Veterinary care
-- Rehabilitation
-- Adoption
-- Foster care
-- Community involvement
-
-### Enquiry - `enquiry.html`
-
-The Enquiry page allows visitors to express interest in becoming involved with Paws Animal Rescue.
-
-The page includes an enquiry form for:
-
-- Adoption enquiries
-- Volunteering
-- Sponsorship
-- General enquiries
-
-### Contact - `contact.html`
-
-The Contact page provides ways for visitors to contact Paws Animal Rescue.
-
-It includes:
-
-- Contact information
-- Email information
-- Telephone information
-- Multiple organisation locations
-- Location/map sections
-- Contact form
-- Opening hours
+| Page | File | Main content |
+|---|---|---|
+| Home | `index.html` | Hero, moving ticker, animated statistics, introduction, services preview, **searchable animal directory with profile pop-ups**, adoption steps, testimonial, call to action |
+| About Us | `about.html` | Our story, mission and vision, values, milestones timeline, team, **photo gallery with lightbox** |
+| Services | `services.html` | Six services, **"Ways to help" tabs** with fees, adoption information, **FAQ accordion** |
+| Enquiry | `enquiry.html` | Ways to get involved, **enquiry form** with validation, AJAX submission and a cost/availability response |
+| Contact | `contact.html` | Two branch locations, **interactive Leaflet map**, **contact form that compiles an email**, opening hours |
 
 ---
 
 ## 6. Sitemap
 
-The website structure is organised as follows:
-
+```
 Paws Animal Rescue
-│
-├── Home
-│   └── index.html
-│
-├── About Us
-│   └── about.html
-│
-├── Services
-│   └── services.html
-│
-├── Enquiry
-│   └── enquiry.html
-│
-└── Contact
-    └── contact.html
+├── Home ............ index.html
+├── About Us ........ about.html
+├── Services ........ services.html
+├── Enquiry ......... enquiry.html
+└── Contact ......... contact.html
+```
 
-The navigation menu is available throughout the website so that users can move between the main pages easily.
+A machine-readable version for search engines is in `sitemap.xml`.
 
 ---
 
 ## 7. File and Folder Structure
 
-The project uses the following structure:
-
-Paws-Animal-Rescue/
-│
+```
+Animal-Rescue-Website/
 ├── index.html
 ├── about.html
 ├── services.html
 ├── enquiry.html
 ├── contact.html
+├── robots.txt            ← instructions for search engine crawlers
+├── sitemap.xml           ← list of pages for search engines
+├── _headers              ← security and caching headers (Netlify)
 ├── README.md
-│
 ├── css/
 │   └── style.css
-│
 ├── js/
-│   └── script.js
-│
+│   ├── animals.js        ← animal data used to build the adoption cards
+│   └── script.js         ← all interactive features and form handling
 └── images/
-    ├── hero image
-    ├── animal images
-    ├── service images
-    ├── team images
-    └── other website images
-
-The HTML files contain the website content and structure.
-
-The CSS folder contains the stylesheet used to control the appearance and layout of the website.
-
-The JavaScript folder contains the JavaScript used to provide interactive functionality.
-
-The images folder contains the photographs used throughout the website.
+    ├── labrador-buddy.jpg, tabby-cat-luna.jpg, ... (descriptive names)
+    └── responsive/       ← 480w, 800w and 1200w versions of each photo
+```
 
 ---
 
 ## 8. Technologies Used
 
-The website was developed using:
-
-### HTML5
-
-HTML5 was used to create the structure and content of the website.
-
-Semantic HTML elements such as:
-
-- `<header>`
-- `<nav>`
-- `<main>`
-- `<section>`
-- `<article>`
-- `<footer>`
-
-were used to organise the content.
-
-### CSS3
-
-CSS3 was used to control:
-
-- Colours
-- Typography
-- Spacing
-- Buttons
-- Cards
-- Navigation
-- Responsive layouts
-- Image presentation
-- Hover effects
-
-### JavaScript
-
-JavaScript was used to provide interactive functionality.
-
-This includes:
-
-- Mobile navigation
-- Form interaction
-- Form validation
-- Submission confirmation messages
+- **HTML5**: semantic structure (`header`, `nav`, `main`, `section`, `article`, `aside`, `figure`, `footer`), forms and ARIA attributes.
+- **CSS3**: custom properties (variables), Flexbox, Grid, `aspect-ratio`, `object-fit`, keyframe animations, media queries and `prefers-reduced-motion`.
+- **JavaScript (ES6+)**: DOM manipulation, event delegation, `IntersectionObserver`, the Fetch API (AJAX), `FormData`, `URLSearchParams` and the Clipboard API.
+- **Leaflet 1.9.4** with **OpenStreetMap** tiles for the interactive map.
+- **Google Fonts**: Fredoka (headings) and Nunito (body text).
+- **JSONPlaceholder**: a free test API used to demonstrate AJAX form submission.
 
 ---
 
 ## 9. Design and Colour Scheme
 
-The website uses a bright and welcoming colour scheme inspired by nature, love, care and animal welfare.
+Part 3 replaced the softer green/cream palette with a brighter, happier one built on four colours:
 
-The main colours include:
+| Colour | Hex | Use |
+|---|---|---|
+| Orange | `#FF6A00` | Buttons, highlights, banners and stickers |
+| Green | `#00A651` / dark `#007F3F` | Statistics band, tags, links and the call-to-action band |
+| Black | `#111111` | Text, outlines and the moving ticker |
+| White | `#FFFFFF` | Main background |
 
-- Green - represents nature, growth, safety and care.
-- Coral/orange - represents warmth, energy and compassion.
-- Yellow - represents happiness, hope and positivity.
-- Pink - represents love and affection.
-- White - provides a clean background and improves readability.
+Pale tints of orange and green separate the sections. Black text is used on orange and bright green, and white text only on dark green or black, so all text meets WCAG contrast guidelines.
 
-The website uses a white-based design with stronger accent colours to make buttons, headings, calls to action and important information stand out.
-
-The design was intentionally created to feel friendly, positive and welcoming rather than formal or corporate.
-
----
-
-## 10. Images
-
-Images were used throughout the website to make the organisation and animals more visually engaging.
-
-The images include:
-
-- Rescue animals
-- Dogs
-- Cats
-- Animal care
-- Veterinary care
-- Volunteers
-- Adoption
-- Foster care
-- Community involvement
-
-The images are stored in the `images` folder.
-
-CSS image properties were used to ensure that animal photographs remain proportional and are not unnecessarily stretched or cropped.
+Rounded fonts, thick black outlines and "sticker" shadows give the site a cheerful, playful character that suits a happy rescue organisation. A repeating paw-print pattern, a moving word ticker, floating stickers, count-up numbers and a gentle scroll reveal add motion and fill the empty spaces. All animations stop automatically for visitors who turn on "reduce motion" in their device settings.
 
 ---
 
-## 11. User Experience
+## 10. Part 3: Functionality (JavaScript)
 
-The website was designed with usability in mind.
-
-The main user experience features include:
-
-- Simple navigation.
-- Clear page headings.
-- Easy-to-identify calls to action.
-- Clearly labelled buttons.
-- Readable text.
-- Organised content sections.
-- Animal information presented in cards.
-- Forms with clearly labelled fields.
-- Responsive design for different screen sizes.
-
-Important actions such as adopting an animal, volunteering and contacting the organisation are made prominent through call-to-action buttons.
+| Requirement (Part 3 brief) | Where it is implemented |
+|---|---|
+| Accordion | FAQ on `services.html` (one +/× icon per question; opening one closes the others; keyboard accessible) |
+| Tabs | "Ways to help" on `services.html` (Adopt / Foster / Volunteer / Sponsor; arrow-key navigation) |
+| Modal | Animal profile pop-up on `index.html` (Escape to close, focus kept inside, returns focus afterwards) |
+| Interactive map | Leaflet + OpenStreetMap on `contact.html`; "Show on map" buttons fly the map to each branch |
+| Animations and transitions | Moving ticker, floating stickers, animated counters, scroll reveal, button and card hover effects, pop-in dialogs |
+| Advanced DOM manipulation | Animal cards, filters, profile modal, lightbox, enquiry results and email preview are all built with `createElement`, `replaceChildren` and `textContent` |
+| Gallery with lightbox | "Life at Paws" gallery on `about.html` (previous/next buttons, arrow keys, captions) |
+| Dynamically loaded content | Adoption cards (`index.html`) and the animal list in the enquiry form are generated from `js/animals.js` |
+| Search, filter and sort | Animal directory: search by name or trait, filter dogs/cats, sort by name, age or fee |
 
 ---
 
-## 12. Responsive Design
+## 11. Part 3: Forms and Validation
 
-The website uses responsive CSS media queries to allow the website to adapt to:
+### Enquiry form (`enquiry.html`)
+Lets visitors enquire about **adopting, fostering, volunteering, sponsoring** or a general question.
 
-- Desktop computers
-- Tablets
-- Mobile phones
+- **Smart fields:** only the relevant fields appear for each enquiry type (animal list, sponsorship amount, volunteer area, visit date).
+- **Validation:** required fields; names (letters only, 2–50 characters); email format; South African phone format (`082 123 4567` or `+27 82 123 4567`), which becomes required if "Phone call" is chosen; a visit date from tomorrow to 60 days ahead and not on a Sunday; a sponsorship amount from R50 to R50 000; a message of 20–1 000 characters with a live counter; and a consent checkbox.
+- **Error handling:** a clear red message under each field, live re-checking as the visitor types, and focus moved to the first problem.
+- **AJAX submission:** valid data is sent in the background with `fetch()` to the URL in the form's `action` attribute (`https://jsonplaceholder.typicode.com/posts`), without reloading the page. The returned ID creates a reference number.
+- **Processed response:** the visitor sees the **cost** (adoption fee, sponsorship total and what it pays for, or free for fostering and volunteering), **availability** (whether the animal is available or reserved, meet-and-greet times for the chosen day, volunteer shifts) and the next steps. If the server cannot be reached, the response is still shown with a note.
+- Arriving from an "Apply to adopt" button pre-fills the enquiry type and animal.
 
-On smaller screens, content sections change from multiple columns to single-column layouts.
+### Contact form (`contact.html`)
+For general messages to the organisation.
 
-The navigation menu also changes to a mobile-friendly navigation layout.
-
-Images are resized according to the available screen size while maintaining their proportions.
-
----
-
-## 13. Forms and JavaScript Functionality
-
-The website includes enquiry and contact forms.
-
-The enquiry form allows users to provide information such as:
-
-- Name
-- Email address
-- Type of enquiry
-- Message
-
-The contact form allows users to provide:
-
-- Name
-- Email address
-- Subject
-- Message
-
-JavaScript checks whether required fields have been completed before displaying a confirmation message.
-
-The forms are currently front-end forms for demonstration purposes and are not connected to a live database or email server.
+- Fields: full name, email, optional phone, **type of message** (general, lost/found animal, visit, donation, feedback, media) and subject, plus a full message (20–1 500 characters).
+- After validation, the details are **compiled into an email** addressed to `hello@pawsrescue.co.za` (set in `js/script.js`). The visitor sees a preview and can press **Send with my email app** (a `mailto:` link with the subject and body filled in) or copy the text.
+- The form's `action` is `mailto:hello@pawsrescue.co.za`, so it still works as a basic email form if JavaScript is off.
 
 ---
 
-## 14. Calls to Action
+## 12. Part 3: Search Engine Optimisation (SEO)
 
-Calls to action are used throughout the website to encourage visitors to become involved with Paws Animal Rescue.
+### On-page SEO
+- **Keyword research:** target phrases were chosen for local searches, such as *animal rescue Cape Town*, *adopt a dog Cape Town*, *adopt a cat*, *foster animals Cape Town*, *volunteer at animal shelter* and *pet adoption fees*. They appear naturally in titles, headings, descriptions and body text.
+- **Title tags and meta descriptions:** each page has a unique title under 60 characters and a description under 160 characters.
+- **Header tags:** each page has exactly one `<h1>`, followed by `<h2>` section headings and `<h3>` card headings.
+- **Image optimisation:** images were renamed descriptively (for example `dog-2.jpg` became `labrador-buddy.jpg`), compressed, and given detailed alt text, `width`/`height` attributes and responsive `srcset` versions.
+- **Clean URLs:** short, lowercase, descriptive file names (`about.html`, `services.html`, and so on).
+- **Internal linking:** contextual links between pages (service cards link to `services.html#…`, footer links, "Apply to adopt" links to the enquiry form).
+- **Mobile-friendliness:** responsive layouts at 1000px, 760px and 420px, a mobile menu, and touch-sized buttons.
 
-Examples include:
+### Off-page SEO
+- **Social media:** footer links to Facebook, Instagram and TikTok, plus Open Graph and Twitter Card tags so shared links display a title, description and image.
+- **Local SEO:** `AnimalShelter` structured data (JSON-LD) with both addresses, phone number and opening hours; `geo` meta tags; addresses, phone numbers and the map on the Contact page.
+- **Backlinks (plan):** listing Paws on Cape Town pet directories, local vet and pet shop partner websites, and community notice boards; guest posts on local pet blogs; and the deployed site link in social media bios.
 
-- Adopt an Animal
-- Meet Our Animals
-- Donate
-- Become a Volunteer
-- Learn More
-- Contact Us
+### Additional requirements
+- **robots.txt:** allows all pages to be crawled and points to the sitemap.
+- **sitemap.xml:** lists all five pages with priorities and last-modified dates.
+- **Page speed:** compressed images in 480/800/1200px sizes, lazy loading below the fold, `fetchpriority="high"` on the main image, deferred scripts, font `preconnect` with `display=swap`, and cache headers in `_headers`.
+- **Security:** a Content-Security-Policy restricts which sites can supply scripts, styles, images and form submissions; Subresource Integrity on the Leaflet files; `rel="noopener noreferrer"` on external links; all visitor input is shown with `textContent` (never `innerHTML`) to prevent cross-site scripting; input lengths are limited; and security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, HSTS) are set in `_headers`.
 
-These buttons help guide users towards the most important actions on the website.
-
----
-
-## 15. Accessibility Considerations
-
-The website considers basic accessibility principles by using:
-
-- Clear headings.
-- Descriptive navigation labels.
-- Readable text.
-- Sufficient contrast between text and backgrounds.
-- Labels for form fields.
-- Alternative text for images.
-- Responsive layouts.
-- Semantic HTML elements.
-
-The use of descriptive image alternative text helps users who rely on screen readers understand the purpose of images.
+`robots.txt` and `sitemap.xml` point to the live address: `https://zipho-r.github.io/Animal-Rescue-Website-Part-2/`.
 
 ---
 
-## 16. Testing
+## 13. Accessibility
 
-The website was tested by checking:
+Skip-to-content link; visible keyboard focus; labelled form fields with `aria-describedby` errors and hints; `aria-expanded`, `aria-controls`, `aria-selected` and `role="dialog"` on interactive components; focus trapped inside dialogs and returned afterwards; descriptive alt text; WCAG-compliant colour contrast; and reduced-motion support.
 
-- Navigation links between pages.
-- Buttons and calls to action.
-- Form fields.
-- JavaScript interactions.
-- Image loading.
-- Page layout.
-- Responsive behaviour.
-- General appearance.
+---
 
-The website was opened in a web browser to identify and correct HTML, CSS and JavaScript issues.
+## 14. Testing
 
-Testing was also performed at different screen sizes to ensure that the website remains usable on desktop and smaller devices.
+The website was tested in a browser at desktop (1366px) and mobile (390px) widths. The checks covered:
+
+- Navigation and the mobile menu on every page.
+- Search, filter and sort in the animal directory (including the "no results" message).
+- Animal profile pop-ups (correct photo and details, Escape and close button).
+- The FAQ accordion (one icon per question, only one open at a time) and the tabs.
+- The gallery lightbox (next/previous, arrow keys, Escape).
+- Enquiry form: invalid entries show the correct error messages; valid entries show the cost/availability response; pre-filling from "Apply to adopt" works.
+- Contact form: validation errors, the compiled `mailto:` link and the email preview.
+- No horizontal scrolling on mobile; no JavaScript errors in the console.
+- Every page has one `<h1>`, no duplicate IDs, alt text on all images and no broken local links.
 
 ### Screenshot Evidence
-
-The website was tested using browser developer tools (device toolbar) at the following breakpoints:
-
-- Desktop (1440px and wider)
-- Tablet (768px–1000px)
-- Mobile (375px–700px)
-
-*Screenshots of the homepage, a content page and the mobile navigation menu at each of the breakpoints above should be added here (e.g. `screenshots/desktop.png`, `screenshots/tablet.png`, `screenshots/mobile.png`) to provide evidence of responsive testing, as required by the Part 2 brief.*
+_Add screenshots of the desktop, tablet and mobile views here (for example `screenshots/desktop.png`, `screenshots/tablet.png`, `screenshots/mobile.png`)._
 
 ---
 
-## 17. Future Improvements
+## 15. Deployment
 
-If this website were developed into a real-world system, the following features could be added:
-
-- Online adoption applications.
-- Online donation payments.
-- Volunteer account registration.
-- Animal database.
-- Animal search and filtering.
-- Real-time adoption status.
-- Online appointment booking.
-- Newsletter subscription.
-- Social media integration.
-- Content management system.
-- Database integration.
-- Secure administrator dashboard.
-- Google Maps integration.
-- Email notifications for enquiries.
+1. Push all files to the GitHub repository.
+2. **GitHub Pages:** Settings → Pages → Source: *Deploy from a branch* → `main` / root → Save.
+   **or Netlify:** Add new site → Import from GitHub → choose the repository → Deploy (no build command needed; `_headers` is applied automatically).
+3. The live link (`https://zipho-r.github.io/Animal-Rescue-Website-Part-2/`) is already set in this README, `robots.txt` and `sitemap.xml`.
+4. Optional: submit `sitemap.xml` in Google Search Console.
 
 ---
 
-## 18. Conclusion
+## 16. Future Improvements
 
-The Paws Animal Rescue website provides a friendly and accessible online presence for a fictional animal rescue organisation.
-
-The website allows visitors to learn about the organisation, view animals available for adoption, learn about rescue services, enquire about volunteering or sponsorship, and contact the organisation.
-
-The combination of HTML5, CSS3 and JavaScript provides the foundation for a responsive and interactive website while the use of bright nature-inspired colours and animal photography creates a welcoming visual identity.
-
-The project demonstrates the use of website planning, semantic HTML, CSS styling, responsive design, JavaScript functionality, navigation, forms and basic accessibility principles.
+Online donations, a real database and admin dashboard for animals, volunteer accounts, online booking for meet-and-greets, a newsletter, and server-side email delivery for both forms.
 
 ---
 
-## 19. Changelog
+## 17. Changelog
 
-This section records the edits made to the website for **Part 2 — Designing the Visuals: CSS Styling and Responsive Design**, following on from Part 1.
+### Part 3 Edits: Enhancing Functionality and SEO
+
+#### Summary of improvements from Part 2
+
+| Area | Part 2 | Part 3 |
+|---|---|---|
+| Colour scheme | Muted green, coral, yellow, pink and cream | Bright orange `#FF6A00`, green `#00A651`, black and white with WCAG-compliant contrast |
+| Typography | Arial / system fonts | Google Fonts: Fredoka (headings) and Nunito (body) |
+| Images | Generic names (`dog-2.jpg`, `team1.jpg.webp`), some mismatched with their text, blank bands from `object-fit: contain` | Descriptive names (`labrador-buddy.jpg`), photos matched to names/ages/alt text, fixed-shape frames with `object-fit: cover`, regenerated 480/800/1200w versions |
+| Home page | Static featured-animal cards | Searchable, filterable and sortable animal directory built from `js/animals.js`, with profile pop-ups, ticker, counters, adoption steps and testimonial |
+| About page | Story, mission, values, team | Adds milestones timeline, team bios and a photo gallery with lightbox |
+| Services page | Six service cards | Adds "Ways to help" tabs with fees and a FAQ accordion (double "+" icon fixed) |
+| Enquiry form | Required-field check and a generic confirmation | Conditional fields, format validation, per-field errors, AJAX `fetch()` submission and a cost/availability response |
+| Contact form | Required-field check only; map placeholder | Message-type field, validation, compiled `mailto:` email with preview; working Leaflet map (missing script added) |
+| SEO | Basic titles, no meta descriptions strategy, no robots/sitemap | Keyword-based titles and descriptions, Open Graph/Twitter tags, JSON-LD local business data, `robots.txt`, `sitemap.xml` |
+| Security and speed | None | Content-Security-Policy, `_headers` security/cache headers, SRI on Leaflet, `textContent` output, lazy loading, deferred scripts |
+
+The interim commit "Add interactive Part 3 website features" (an early draft of the contact map, homepage and services changes) was replaced by the final versions of those files described below.
+
+#### Corrections and feedback-related fixes
+- **FAQ showed two plus signs:** the CSS drew a "+" with `.faq-question::after` and the HTML also contained a `+` span. The `::after` rule was removed, so each question now has one round +/× icon that rotates when opened. Each question is linked to its answer with `aria-controls`.
+- **Animal profile images displayed badly:** the pop-up photo was forced to `object-fit: cover` in a narrow column with a 420px minimum height, so photos were heavily cropped. The pop-up now shows the whole photo (`object-fit: contain`) above the details at full resolution using `srcset`, with Dog/Cat and availability badges.
+- **Wrong photos on animals:** Buddy (3 years) had a puppy photo and Milo (8 months) had an adult Labrador photo. The photos were swapped to match the descriptions.
+- **Empty spaces around images:** all images used `object-fit: contain`, which left blank bands. Content images now sit in fixed-shape frames with `object-fit: cover`, so cards in a row are always the same height.
+- **Homepage introduction layout:** the intro container was missing the `two-column` class, so the image and text were stacked with a large gap. Fixed.
+- **Map never appeared:** `contact.html` loaded the Leaflet CSS but not the Leaflet JavaScript file. The script was added (with Subresource Integrity), plus a text fallback if the map cannot load.
+- **Blurry hero image:** a 640px image was stretched across the full screen. The hero was redesigned around a 1 600px photo.
+- **Mismatched images and alt text on the Services page:** the "Animal Rescue" card showed the rehabilitation photo and vice versa. Images and alt text now match each service.
+- **Team details:** "Daniel Jacobs" was shown with a photo of a woman; renamed to Danielle Jacobs.
+- **Unused file:** `volunteer.jpg` (a phone screenshot) was not used on any page and was removed.
+- _Add any further specific comments from your Part 2 lecturer feedback here, with what you changed._
+
+#### Design
+- New brighter palette of orange, green, black and white (see Section 9), replacing the muted greens, coral and cream.
+- Added Google Fonts (Fredoka and Nunito) for a friendlier look than Arial.
+- Filled empty spaces with more content and motion: a moving word ticker, an animated statistics band, floating stickers in the hero, circular photos in every page banner, a paw-print background pattern, an adoption steps section, a testimonial, a milestones timeline and a photo gallery.
+- Added more text throughout: longer introductions, card descriptions, team bios, location details and six FAQs.
+
+#### Functionality (JavaScript)
+- Animal directory rebuilt from data in `js/animals.js` (dynamic content). Added two more animals (Daisy and Snowy) and a bonded pair (Pip & Pepper) using existing images, an extra "Lowest fee" sort option, trait search and a "no results" message.
+- Added interactive tabs, a gallery lightbox, animated counters and a scroll reveal.
+- Map: branch markers fit the view automatically; "Show on map" buttons on each location card.
+- Opening hours highlight today's day automatically.
+- Mobile menu button now updates `aria-expanded` and switches between ☰ and ✕.
+
+#### Forms
+- Enquiry form: conditional fields, full format validation, per-field error messages, live character counter, AJAX submission with `fetch()`, and a cost/availability response (see Section 11).
+- Contact form: added phone and message-type fields, validation and error messages, and compiling the message into an email with a preview and a `mailto:` send button.
+- Both forms now have `action` and `method` attributes.
+
+#### SEO and performance
+- Rewrote every title tag and meta description around researched keywords; added keyword, Open Graph, Twitter Card and geo meta tags.
+- Added `AnimalShelter` structured data (JSON-LD) for local SEO.
+- Renamed all images descriptively; regenerated compressed responsive versions; added `width`/`height`, lazy loading and `fetchpriority`.
+- Added `robots.txt` and `sitemap.xml`.
+- Scripts now load with `defer`.
+
+#### Security
+- Added a Content-Security-Policy and referrer policy meta tags on every page, `_headers` with security headers, Subresource Integrity on Leaflet, `rel="noopener noreferrer"` on external links, and safe `textContent` output for all user input.
+
+#### Documentation
+- README updated with Part 3 functionality, forms, SEO, deployment instructions, this changelog and a references list.
 
 ### Part 2 Edits
 
@@ -455,3 +304,70 @@ This section records the edits made to the website for **Part 2 — Designing th
 ### Notes
 
 The CSS reset, base styles, typography scale, Flexbox/Grid layout, `:hover`/`:focus`/`:active` interactive states, and the tablet/mobile media query breakpoints (1000px and 700px) from Part 1 were reviewed and found to already satisfy the Part 2 requirements, so they were left unchanged.
+
+---
+
+## 18. References
+
+Google, 2026. *Create and submit a sitemap*. [online] Google Search Central. Available at: <https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap> [Accessed 2 November 2026].
+
+Google, 2026. *Introduction to robots.txt*. [online] Google Search Central. Available at: <https://developers.google.com/search/docs/crawling-indexing/robots/intro> [Accessed 2 November 2026].
+
+Google, 2026. *Search Engine Optimization (SEO) Starter Guide*. [online] Google Search Central. Available at: <https://developers.google.com/search/docs/fundamentals/seo-starter-guide> [Accessed 2 November 2026].
+
+Google Fonts, 2026. *Fredoka* and *Nunito*. [online] Available at: <https://fonts.google.com> [Accessed 2 November 2026].
+
+JSONPlaceholder, 2026. *Free fake and reliable API for testing and prototyping*. [online] Available at: <https://jsonplaceholder.typicode.com> [Accessed 2 November 2026].
+
+Leaflet, 2026. *Leaflet: an open-source JavaScript library for interactive maps* (version 1.9.4). [online] Available at: <https://leafletjs.com> [Accessed 2 November 2026].
+
+MDN Web Docs, 2026. *Client-side form validation*. [online] Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation> [Accessed 2 November 2026].
+
+MDN Web Docs, 2026. *Content Security Policy (CSP)*. [online] Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP> [Accessed 2 November 2026].
+
+MDN Web Docs, 2026. *Using the Fetch API*. [online] Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch> [Accessed 2 November 2026].
+
+MDN Web Docs, 2026. *Intersection Observer API*. [online] Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API> [Accessed 2 November 2026].
+
+Netlify, 2026. *Custom headers*. [online] Available at: <https://docs.netlify.com/routing/headers/> [Accessed 2 November 2026].
+
+OpenStreetMap contributors, 2026. *OpenStreetMap*. [online] Available at: <https://www.openstreetmap.org/copyright> [Accessed 2 November 2026].
+
+Schema.org, 2026. *AnimalShelter*. [online] Available at: <https://schema.org/AnimalShelter> [Accessed 2 November 2026].
+
+W3C, 2024. *ARIA Authoring Practices Guide: Accordion, Tabs and Dialog (Modal) patterns*. [online] Available at: <https://www.w3.org/WAI/ARIA/apg/patterns/> [Accessed 2 November 2026].
+
+### Image references
+All photographs in the `images` folder were found through a Google Images search. They are used for educational, non-commercial purposes only and remain the property of their original owners. Files were renamed descriptively and resized for this project.
+
+Google Images, 2026. *Cat recovering with a bandaged paw* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/cat-recovering-with-bandaged-paw.jpg`)
+
+Google Images, 2026. *Family adopting a rescue dog* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/family-adopting-rescue-dog.jpg`)
+
+Google Images, 2026. *Feeding a rescued dog and cat* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/feeding-rescued-dog-and-cat.jpg`)
+
+Google Images, 2026. *Foster family with a rescue dog* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/foster-family-with-rescue-dog.jpg`)
+
+Google Images, 2026. *Golden puppy running* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/golden-puppy-daisy-running.jpg`)
+
+Google Images, 2026. *Golden retriever puppy* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/golden-retriever-puppy-milo.jpg`)
+
+Google Images, 2026. *Labrador dog* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/labrador-buddy.jpg`)
+
+Google Images, 2026. *Animal shelter volunteer team* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/paws-volunteer-team.jpg`)
+
+Google Images, 2026. *Tabby cat* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/tabby-cat-luna.jpg`)
+
+Google Images, 2026. *Portrait photograph used for a team member* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/team-danielle-jacobs.jpg`)
+
+Google Images, 2026. *Portrait photograph used for a team member* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/team-mia-petersen.jpg`)
+
+Google Images, 2026. *Portrait photograph used for a team member* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/team-sarah-williams.jpg`)
+
+Google Images, 2026. *Veterinarians examining a rescue dog* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/vets-examining-rescue-dog.jpg`)
+
+Google Images, 2026. *Volunteer hugging a rescue dog* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/volunteer-hugging-rescue-dog.jpg`)
+
+Google Images, 2026. *White kitten* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/white-kitten-snowy.jpg`)
+
+Google Images, 2026. *Pair of Yorkshire terriers* [Photograph]. Available at: <https://images.google.com> [Accessed September 2026]. (`images/yorkie-pair-pip-and-pepper.jpg`)
