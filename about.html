@@ -1,508 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-ZA">
 <head>
-
-    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Learn about Paws Animal Rescue, our mission, vision, values and commitment to animal welfare in Cape Town.">
+    <!-- SECURITY: Content Security Policy only allows files from this site and the few trusted services we use -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://jsonplaceholder.typicode.com; form-action 'self' https://jsonplaceholder.typicode.com mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Paws Animal Rescue | About Us</title>
+    <!-- ON-PAGE SEO: unique title (under 60 characters) and meta description (under 160 characters) -->
+    <title>About Paws Animal Rescue | Cape Town Animal Shelter</title>
+    <meta name="description" content="Meet the team behind Paws Animal Rescue, a Cape Town animal shelter and non-profit. Read our story, mission, values and see our happy rescue animals.">
+    <meta name="keywords" content="about Paws Animal Rescue, Cape Town animal shelter, animal welfare non-profit, rescue team Cape Town">
+    <meta name="author" content="Paws Animal Rescue">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FF6A00">
 
-    <!-- Main stylesheet -->
+    <!-- LOCAL SEO: location information -->
+    <meta name="geo.region" content="ZA-WC">
+    <meta name="geo.placename" content="Cape Town">
+
+    <!-- OFF-PAGE SEO: Open Graph tags control how links look when shared on social media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Paws Animal Rescue">
+    <meta property="og:title" content="About Paws Animal Rescue | Cape Town Animal Shelter">
+    <meta property="og:description" content="Meet the team behind Paws Animal Rescue, a Cape Town animal shelter and non-profit. Read our story, mission, values and see our happy rescue animals.">
+    <meta property="og:image" content="images/family-adopting-rescue-dog.jpg">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E">
+
+    <!-- PAGE SPEED: connect to the font server early; fonts use display=swap so text shows immediately -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- =========================
-         HEADER AND NAVIGATION
-         ========================= -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <a href="index.html" class="logo">
-
-                <span class="logo-icon">🐾</span>
-
-                <span class="logo-text">
-                    <strong>Paws</strong>
-                    <small>Animal Rescue</small>
-                </span>
-
+    <!-- ===== HEADER AND NAVIGATION ===== -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="Paws Animal Rescue home page">
+                <span class="logo-icon" aria-hidden="true">🐾</span>
+                <span class="logo-text"><strong>Paws</strong><small>Animal Rescue</small></span>
             </a>
-
-
-            <ul class="nav-links">
-
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="about.html" class="active">About Us</a>
-                </li>
-
-                <li>
-                    <a href="services.html">Services</a>
-                </li>
-
-                <li>
-                    <a href="enquiry.html">Enquiry</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-cta"><a href="index.html#adopt">Adopt a pet</a></li>
             </ul>
-
-
-            <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu">
-
-                ☰
-
-            </button>
-
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">☰</button>
         </nav>
-
     </header>
 
-
-    <!-- =========================
-         MAIN CONTENT
-         ========================= -->
-
-    <main>
-
+    <main id="main">
         <!-- Page banner -->
         <section class="page-banner">
-
-            <div class="section-container">
-
-                <p class="eyebrow">
-                    ABOUT PAWS
-                </p>
-
-                <h1>
-                    Compassion starts
-                    <span>with care.</span>
-                </h1>
-
-                <p>
-                    Learn more about who we are, what we believe
-                    and why we rescue.
-                </p>
-
+            <div class="container page-banner-grid">
+                <div>
+                    <p class="breadcrumb"><a href="index.html">Home</a> / About us</p>
+                    <h1>Compassion starts <span class="mark-green mark">with care.</span></h1>
+                    <p>Who we are, what we believe and the people (and animals) who make Paws such a happy place.</p>
+                </div>
+                <div class="banner-photo">
+                    <img src="images/team-sarah-williams.jpg" srcset="images/responsive/team-sarah-williams-480w.jpg 480w, images/team-sarah-williams.jpg 784w" sizes="(max-width: 1000px) 240px, 360px" width="784" height="523" alt="Rescue coordinator Sarah cuddling a black and white cat at the vet clinic" fetchpriority="high" style="object-position:45% 50%">
+                </div>
             </div>
-
         </section>
 
-
-        <!-- Our story -->
-        <section class="about-story section-spacing">
-
-            <div class="section-container two-column">
-
-                <div class="image-content">
-
-                    <picture>
-                        <source
-                            srcset="images/responsive/about-480w.jpg 480w, images/about.jpg 694w"
-                            sizes="(max-width: 700px) 100vw, 50vw"
-                            type="image/jpeg">
-
-                        <img src="images/about.jpg"
-                            srcset="images/responsive/about-480w.jpg 480w, images/about.jpg 694w"
-                            sizes="(max-width: 700px) 100vw, 50vw"
-                            alt="A volunteer caring for a rescued animal">
-                    </picture>
-
+        <!-- ===== OUR STORY ===== -->
+        <section class="section">
+            <div class="container two-column">
+                <div class="image-frame orange-shadow reveal">
+                    <img src="images/paws-volunteer-team.jpg" srcset="images/responsive/paws-volunteer-team-480w.jpg 480w, images/paws-volunteer-team.jpg 680w" sizes="(max-width: 760px) 92vw, 560px" width="680" height="404" alt="The Paws volunteer team in orange and green T-shirts outside the animal shelter" loading="lazy" decoding="async">
                 </div>
-
-
                 <div class="text-content">
-
-                    <p class="section-label">
-                        OUR STORY
-                    </p>
-
-                    <h2>
-                        Every rescue begins
-                        with <span>hope.</span>
-                    </h2>
-
-                    <p>
-                        Paws Animal Rescue was established to provide
-                        support to abandoned, neglected and abused animals
-                        in the Cape Town community.
-                    </p>
-
-                    <p>
-                        We believe that every animal deserves to be treated
-                        with kindness and given an opportunity to live a
-                        safe and fulfilling life.
-                    </p>
-
-                    <p>
-                        Our work focuses on rescue, temporary shelter,
-                        basic veterinary care, rehabilitation and finding
-                        responsible forever homes.
-                    </p>
-
+                    <span class="tag">Our story</span>
+                    <h2>Every rescue begins with hope.</h2>
+                    <p>Paws Animal Rescue began in 2016 when a group of friends in Diep River started taking in stray dogs from their neighbourhood. Word spread, the garage filled up, and a small shelter was born.</p>
+                    <p>Today we run two branches in Cape Town, with a vet partner, 65 foster homes and more than 180 volunteers. Our focus is still the same: rescue, shelter, vet care, rehabilitation and finding responsible forever homes.</p>
+                    <p>We believe every animal deserves kindness and a safe, happy life, no matter how they started out.</p>
+                    <a class="text-link" href="services.html">See what we do every day</a>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- Mission and vision -->
-        <section class="mission-section">
-
-            <div class="section-container">
-
-                <div class="mission-grid">
-
-                    <article class="mission-card">
-
-                        <div class="mission-icon">
-                            🌿
-                        </div>
-
-                        <h2>Our Mission</h2>
-
-                        <p>
-                            Our mission is to protect vulnerable animals
-                            by providing rescue, care, rehabilitation and
-                            adoption services while promoting responsible
-                            animal ownership within our community.
-                        </p>
-
-                    </article>
-
-
-                    <article class="mission-card">
-
-                        <div class="mission-icon">
-                            🌍
-                        </div>
-
-                        <h2>Our Vision</h2>
-
-                        <p>
-                            Our vision is to create a caring community
-                            where animals are treated responsibly and
-                            fewer animals are abandoned, neglected or
-                            left without proper care.
-                        </p>
-
-                    </article>
-
-                </div>
-
+        <!-- ===== MISSION AND VISION ===== -->
+        <section class="section section-tint-green section-paws">
+            <div class="container card-grid-2">
+                <article class="mission-card orange reveal">
+                    <div class="icon-bubble" aria-hidden="true">🎯</div>
+                    <h2>Our mission</h2>
+                    <p>To protect vulnerable animals by providing rescue, care, rehabilitation and adoption services, while teaching our community about responsible pet ownership.</p>
+                </article>
+                <article class="mission-card green reveal">
+                    <div class="icon-bubble" aria-hidden="true">🌍</div>
+                    <h2>Our vision</h2>
+                    <p>A Cape Town where every pet is wanted, sterilised and cared for, and where no animal is left abandoned, neglected or alone.</p>
+                </article>
             </div>
-
         </section>
 
-
-        <!-- Values -->
-        <section class="values-section section-spacing">
-
-            <div class="section-container">
-
+        <!-- ===== VALUES ===== -->
+        <section class="section">
+            <div class="container">
                 <div class="section-heading centered">
-
-                    <p class="section-label">
-                        WHAT WE STAND FOR
-                    </p>
-
-                    <h2>
-                        Our values guide
-                        <span>everything we do.</span>
-                    </h2>
-
+                    <span class="tag tag-orange">What we stand for</span>
+                    <h2>Our values guide everything we do.</h2>
                 </div>
-
-
-                <div class="value-grid">
-
-                    <article class="value-card">
-
-                        <div class="value-icon">
-                            ❤️
-                        </div>
-
-                        <h3>Compassion</h3>
-
-                        <p>
-                            We treat every animal with patience,
-                            kindness and respect.
-                        </p>
-
-                    </article>
-
-
-                    <article class="value-card">
-
-                        <div class="value-icon">
-                            🤝
-                        </div>
-
-                        <h3>Responsibility</h3>
-
-                        <p>
-                            We promote responsible care and
-                            lifelong commitment to animals.
-                        </p>
-
-                    </article>
-
-
-                    <article class="value-card">
-
-                        <div class="value-icon">
-                            🌱
-                        </div>
-
-                        <h3>Hope</h3>
-
-                        <p>
-                            We believe every animal deserves
-                            the opportunity for a better future.
-                        </p>
-
-                    </article>
-
-
-                    <article class="value-card">
-
-                        <div class="value-icon">
-                            🐾
-                        </div>
-
-                        <h3>Community</h3>
-
-                        <p>
-                            We work together with volunteers,
-                            adopters and supporters to save lives.
-                        </p>
-
-                    </article>
-
+                <div class="card-grid-4">
+                    <article class="info-card value-card reveal"><div class="icon-bubble" aria-hidden="true">❤️</div><h3>Compassion</h3><p>We treat every animal with patience, kindness and respect, especially the frightened ones.</p></article>
+                    <article class="info-card value-card reveal"><div class="icon-bubble" aria-hidden="true">🤝</div><h3>Responsibility</h3><p>We sterilise every animal and support adopters for life, because a pet is a lifelong promise.</p></article>
+                    <article class="info-card value-card reveal"><div class="icon-bubble" aria-hidden="true">☀️</div><h3>Hope</h3><p>We believe no animal is a lost cause. Time and love can heal almost anything.</p></article>
+                    <article class="info-card value-card reveal"><div class="icon-bubble" aria-hidden="true">🐾</div><h3>Community</h3><p>Volunteers, fosters, sponsors and adopters save lives together. Nobody does it alone.</p></article>
                 </div>
-
             </div>
-
         </section>
 
+        <!-- ===== MILESTONES (a real sequence, so a timeline is used) ===== -->
+        <section class="section section-tint-orange">
+            <div class="container two-column timeline-layout">
+                <div class="text-content">
+                    <span class="tag">Our journey</span>
+                    <h2>Milestones along the way.</h2>
+                    <p>From one garage to two branches, Paws has grown thanks to the people of Cape Town. Here are some of the moments we're proudest of.</p>
+                    <div class="image-frame reveal">
+                        <img src="images/feeding-rescued-dog-and-cat.jpg" srcset="images/responsive/feeding-rescued-dog-and-cat-480w.jpg 480w, images/responsive/feeding-rescued-dog-and-cat-800w.jpg 800w, images/feeding-rescued-dog-and-cat.jpg 1200w" sizes="(max-width: 760px) 92vw, 560px" width="1200" height="798" alt="A volunteer hand-feeding a rescued dog and cat at the shelter" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <ol class="timeline">
+                    <li class="reveal"><p class="year">2016</p><p>Three friends start rescuing stray dogs from a garage in Diep River.</p></li>
+                    <li class="reveal"><p class="year">2018</p><p>Paws registers as a non-profit and opens the Southern Branch on Main Road.</p></li>
+                    <li class="reveal"><p class="year">2020</p><p>Our partner vet clinic opens on site, so animals are treated the day they arrive.</p></li>
+                    <li class="reveal"><p class="year">2021</p><p>The foster programme launches, and the 500th animal goes home.</p></li>
+                    <li class="reveal"><p class="year">2023</p><p>The Northern Branch opens in Table View to help animals on the West Coast.</p></li>
+                    <li class="reveal"><p class="year">2026</p><p>More than 1 240 animals rehomed, and still counting.</p></li>
+                </ol>
+            </div>
+        </section>
 
-        <!-- Team -->
-        <section class="team-section section-spacing">
-
-            <div class="section-container">
-
+        <!-- ===== TEAM ===== -->
+        <section class="section">
+            <div class="container">
                 <div class="section-heading centered">
-
-                    <p class="section-label">
-                        OUR TEAM
-                    </p>
-
-                    <h2>
-                        The people behind
-                        <span>the paws.</span>
-                    </h2>
-
-                    <p>
-                        Our team and volunteers work together to
-                        give every animal the care they need.
-                    </p>
-
+                    <span class="tag tag-green">Our team</span>
+                    <h2>The people behind the paws.</h2>
+                    <p>A small full-time team, backed by a big family of volunteers.</p>
                 </div>
-
-
-                <div class="team-grid">
-
-                    <article class="team-card">
-
-                        <img src="images/team1.jpg.webp"
-                            srcset="images/responsive/team1-480w.jpg 480w, images/team1.jpg.webp 784w"
-                            sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                            alt="Paws Animal Rescue rescue coordinator">
-
-                        <div>
-
-                            <h3>
-                                Sarah Williams
-                            </h3>
-
-                            <p>
-                                Rescue Coordinator
-                            </p>
-
-                        </div>
-
+                <div class="card-grid-3">
+                    <article class="team-card reveal">
+                        <div class="team-photo"><img src="images/team-sarah-williams.jpg" srcset="images/responsive/team-sarah-williams-480w.jpg 480w, images/team-sarah-williams.jpg 784w" sizes="(max-width: 760px) 92vw, 380px" width="784" height="523" alt="Sarah Williams, rescue coordinator, holding a black and white cat at the vet clinic" loading="lazy" decoding="async"></div>
+                        <div class="team-body"><h3>Sarah Williams</h3><p class="team-role">Rescue coordinator</p><p>Sarah runs our rescue line and has personally brought more than 400 animals to safety.</p></div>
                     </article>
-
-
-                    <article class="team-card">
-
-                        <img src="images/team-2.jpg"
-                            srcset="images/responsive/team-2-480w.jpg 480w, images/responsive/team-2-800w.jpg 800w, images/team-2.jpg 900w"
-                            sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                            alt="Paws Animal Rescue volunteer coordinator">
-
-                        <div>
-
-                            <h3>
-                                Daniel Jacobs
-                            </h3>
-
-                            <p>
-                                Volunteer Coordinator
-                            </p>
-
-                        </div>
-
+                    <article class="team-card reveal">
+                        <div class="team-photo"><img src="images/team-danielle-jacobs.jpg" srcset="images/responsive/team-danielle-jacobs-480w.jpg 480w, images/responsive/team-danielle-jacobs-800w.jpg 800w, images/team-danielle-jacobs.jpg 900w" sizes="(max-width: 760px) 92vw, 380px" width="900" height="600" alt="Danielle Jacobs, volunteer coordinator, sitting on the grass with two happy dogs" loading="lazy" decoding="async"></div>
+                        <div class="team-body"><h3>Danielle Jacobs</h3><p class="team-role">Volunteer coordinator</p><p>Danielle trains new volunteers and plans our weekend adoption days and fundraisers.</p></div>
                     </article>
-
-
-                    <article class="team-card">
-
-                        <img src="images/team-3.jpg"
-                            srcset="images/responsive/team-3-480w.jpg 480w, images/responsive/team-3-800w.jpg 800w, images/responsive/team-3-1200w.jpg 1200w, images/team-3.jpg 1417w"
-                            sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                            alt="Paws Animal Rescue animal care coordinator">
-
-                        <div>
-
-                            <h3>
-                                Mia Petersen
-                            </h3>
-
-                            <p>
-                                Animal Care Coordinator
-                            </p>
-
-                        </div>
-
+                    <article class="team-card reveal">
+                        <div class="team-photo"><img src="images/team-mia-petersen.jpg" srcset="images/responsive/team-mia-petersen-480w.jpg 480w, images/responsive/team-mia-petersen-800w.jpg 800w, images/responsive/team-mia-petersen-1200w.jpg 1200w, images/team-mia-petersen.jpg 1417w" sizes="(max-width: 760px) 92vw, 380px" width="1417" height="945" alt="Mia Petersen, animal care coordinator, lifting a grey tabby cat outdoors" loading="lazy" decoding="async"></div>
+                        <div class="team-body"><h3>Mia Petersen</h3><p class="team-role">Animal care coordinator</p><p>Mia looks after daily care, feeding plans and rehabilitation for every resident.</p></div>
                     </article>
-
                 </div>
-
             </div>
-
         </section>
 
+        <!-- ===== GALLERY WITH LIGHTBOX ===== -->
+        <section class="section section-tint-green" id="gallery">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="tag">Photo gallery</span>
+                    <h2>Life at Paws.</h2>
+                    <p>Click any photo to see it larger. Use the arrow keys or buttons to move between photos.</p>
+                </div>
+                <div class="gallery">
+                    <button class="gallery-item wide tall" type="button" data-full="images/golden-puppy-daisy-running.jpg" aria-label="Enlarge photo: Daisy the puppy running across the grass">
+                        <img src="images/golden-puppy-daisy-running.jpg" srcset="images/responsive/golden-puppy-daisy-running-480w.jpg 480w, images/responsive/golden-puppy-daisy-running-800w.jpg 800w, images/responsive/golden-puppy-daisy-running-1200w.jpg 1200w, images/golden-puppy-daisy-running.jpg 1600w" sizes="(max-width: 1000px) 46vw, 300px" width="1600" height="1104" alt="Daisy the puppy running across the grass" loading="lazy" decoding="async">
+                        <span>Daisy</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-full="images/white-kitten-snowy.jpg" aria-label="Enlarge photo: Snowy the white kitten exploring the lawn">
+                        <img src="images/white-kitten-snowy.jpg" srcset="images/responsive/white-kitten-snowy-480w.jpg 480w, images/responsive/white-kitten-snowy-800w.jpg 800w, images/white-kitten-snowy.jpg 1200w" sizes="(max-width: 1000px) 46vw, 300px" width="1200" height="900" alt="Snowy the white kitten exploring the lawn" loading="lazy" decoding="async">
+                        <span>Snowy</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-full="images/tabby-cat-luna.jpg" aria-label="Enlarge photo: Luna the tabby cat relaxing on a step">
+                        <img src="images/tabby-cat-luna.jpg" srcset="images/responsive/tabby-cat-luna-480w.jpg 480w, images/responsive/tabby-cat-luna-800w.jpg 800w, images/responsive/tabby-cat-luna-1200w.jpg 1200w, images/tabby-cat-luna.jpg 1280w" sizes="(max-width: 1000px) 46vw, 300px" width="1280" height="783" alt="Luna the tabby cat relaxing on a step" loading="lazy" decoding="async">
+                        <span>Luna</span>
+                    </button>
+                    <button class="gallery-item wide" type="button" data-full="images/cat-recovering-with-bandaged-paw.jpg" aria-label="Enlarge photo: A ginger cat recovering with a bandaged paw">
+                        <img src="images/cat-recovering-with-bandaged-paw.jpg" srcset="images/responsive/cat-recovering-with-bandaged-paw-480w.jpg 480w, images/responsive/cat-recovering-with-bandaged-paw-800w.jpg 800w, images/responsive/cat-recovering-with-bandaged-paw-1200w.jpg 1200w, images/cat-recovering-with-bandaged-paw.jpg 1600w" sizes="(max-width: 1000px) 46vw, 300px" width="1600" height="1066" alt="A ginger cat recovering with a bandaged paw" loading="lazy" decoding="async">
+                        <span>Recovery</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-full="images/yorkie-pair-pip-and-pepper.jpg" aria-label="Enlarge photo: Pip and Pepper snuggled together in a dog bed">
+                        <img src="images/yorkie-pair-pip-and-pepper.jpg" srcset="images/responsive/yorkie-pair-pip-and-pepper-480w.jpg 480w, images/yorkie-pair-pip-and-pepper.jpg 640w" sizes="(max-width: 1000px) 46vw, 300px" width="640" height="640" alt="Pip and Pepper snuggled together in a dog bed" loading="lazy" decoding="async">
+                        <span>Pip and Pepper</span>
+                    </button>
+                    <button class="gallery-item wide" type="button" data-full="images/golden-retriever-puppy-milo.jpg" aria-label="Enlarge photo: Milo the golden puppy sitting among orange flowers">
+                        <img src="images/golden-retriever-puppy-milo.jpg" srcset="images/responsive/golden-retriever-puppy-milo-480w.jpg 480w, images/responsive/golden-retriever-puppy-milo-800w.jpg 800w, images/golden-retriever-puppy-milo.jpg 1200w" sizes="(max-width: 1000px) 46vw, 300px" width="1200" height="1197" alt="Milo the golden puppy sitting among orange flowers" loading="lazy" decoding="async">
+                        <span>Milo</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-full="images/labrador-buddy.jpg" aria-label="Enlarge photo: Buddy the Labrador standing on the grass">
+                        <img src="images/labrador-buddy.jpg" srcset="images/responsive/labrador-buddy-480w.jpg 480w, images/labrador-buddy.jpg 700w" sizes="(max-width: 1000px) 46vw, 300px" width="700" height="577" alt="Buddy the Labrador standing on the grass" loading="lazy" decoding="async">
+                        <span>Buddy</span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-        <!-- Call to action -->
+        <!-- ===== CALL TO ACTION ===== -->
         <section class="cta-section">
-
-            <div class="cta-content">
-
-                <p class="section-label">
-                    JOIN OUR COMMUNITY
-                </p>
-
-                <h2>
-                    Together, we can give
-                    <span>them a second chance.</span>
-                </h2>
-
-                <p>
-                    Your time, support and compassion can help
-                    us continue caring for animals in need.
-                </p>
-
-                <a href="enquiry.html" class="btn btn-light">
-                    Get Involved
-                </a>
-
+            <div class="container">
+                <h2>Join our community.</h2>
+                <p>Your time, support and kindness help us keep rescuing animals in need.</p>
+                <div class="button-row">
+                    <a href="enquiry.html" class="btn btn-primary">Become a volunteer</a>
+                    <a href="index.html#adopt" class="btn btn-light">Meet the animals</a>
+                </div>
             </div>
-
         </section>
-
     </main>
 
-
-    <!-- =========================
-         FOOTER
-         ========================= -->
-
-    <footer>
-
-        <div class="footer-container">
-
+    <!-- ===== FOOTER (internal links, contact details and social media links) ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
             <div class="footer-about">
-
                 <a href="index.html" class="logo">
-
-                    <span class="logo-icon">🐾</span>
-
-                    <span class="logo-text">
-                        <strong>Paws</strong>
-                        <small>Animal Rescue</small>
-                    </span>
-
+                    <span class="logo-icon" aria-hidden="true">🐾</span>
+                    <span class="logo-text"><strong>Paws</strong><small>Animal Rescue</small></span>
                 </a>
-
-                <p>
-                    Rescue. Love. Rehome.
-                    Giving vulnerable animals the second chance
-                    they deserve.
-                </p>
-
+                <p>Rescue. Love. Rehome. A Cape Town non-profit giving abandoned, neglected and abused animals the second chance they deserve.</p>
+                <ul class="social-links" aria-label="Paws Animal Rescue on social media">
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">f</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">ig</a></li>
+                    <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok (opens in a new tab)">tt</a></li>
+                </ul>
             </div>
-
-
-            <div class="footer-links">
-
-                <h3>Quick Links</h3>
-
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="enquiry.html">Enquiry</a>
-                <a href="contact.html">Contact</a>
-
+            <div>
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Our services</a></li>
+                    <li><a href="services.html#faq">Adoption FAQs</a></li>
+                </ul>
             </div>
-
-
-            <div class="footer-contact">
-
-                <h3>Contact Us</h3>
-
-                <p>📍 Cape Town, South Africa</p>
-                <p>📞 021 555 0123</p>
-                <p>✉️ hello@pawsrescue.co.za</p>
-
+            <div>
+                <h3>Get involved</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#adopt">Adopt a dog or cat</a></li>
+                    <li><a href="enquiry.html">Volunteer or foster</a></li>
+                    <li><a href="enquiry.html">Sponsor an animal</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
             </div>
-
+            <div>
+                <h3>Visit us</h3>
+                <p>25 Main Road, Diep River<br>18 Blaauwberg Road, Table View<br>Cape Town</p>
+                <p><a href="tel:+27215550123">021 555 0123</a><br><a href="mailto:hello@pawsrescue.co.za">hello@pawsrescue.co.za</a></p>
+            </div>
         </div>
-
-
         <div class="footer-bottom">
-
-            <p>
-                © 2026 Paws Animal Rescue. All rights reserved.
-            </p>
-
+            <p>© <span data-year>2026</span> Paws Animal Rescue NPC. A fictional organisation created for a web development project.</p>
         </div>
-
     </footer>
 
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-
+    <!-- PAGE SPEED: scripts load with "defer" so they never block the page from displaying -->
+    <script src="js/animals.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
-
 </html>

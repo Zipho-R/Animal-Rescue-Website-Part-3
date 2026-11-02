@@ -1,522 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-ZA">
 <head>
-
-    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Explore the rescue, veterinary care, rehabilitation, foster care and adoption services provided by Paws Animal Rescue.">
+    <!-- SECURITY: Content Security Policy only allows files from this site and the few trusted services we use -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://jsonplaceholder.typicode.com; form-action 'self' https://jsonplaceholder.typicode.com mailto:; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Paws Animal Rescue | Services</title>
+    <!-- ON-PAGE SEO: unique title (under 60 characters) and meta description (under 160 characters) -->
+    <title>Animal Rescue Services | Adoption & Foster Care Cape Town</title>
+    <meta name="description" content="Animal rescue, vet care, rehabilitation, adoption, foster care and education in Cape Town. See adoption fees, sponsorship options and answers to common questions.">
+    <meta name="keywords" content="pet adoption fees Cape Town, foster a dog, animal rehabilitation, sponsor a rescue animal, volunteer animal shelter Cape Town">
+    <meta name="author" content="Paws Animal Rescue">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FF6A00">
 
-    <!-- Main stylesheet -->
+    <!-- LOCAL SEO: location information -->
+    <meta name="geo.region" content="ZA-WC">
+    <meta name="geo.placename" content="Cape Town">
+
+    <!-- OFF-PAGE SEO: Open Graph tags control how links look when shared on social media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Paws Animal Rescue">
+    <meta property="og:title" content="Animal Rescue Services | Adoption & Foster Care Cape Town">
+    <meta property="og:description" content="Animal rescue, vet care, rehabilitation, adoption, foster care and education in Cape Town. See adoption fees, sponsorship options and answers to common questions.">
+    <meta property="og:image" content="images/family-adopting-rescue-dog.jpg">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E">
+
+    <!-- PAGE SPEED: connect to the font server early; fonts use display=swap so text shows immediately -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- =========================
-         HEADER AND NAVIGATION
-         ========================= -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <a href="index.html" class="logo">
-
-                <span class="logo-icon">🐾</span>
-
-                <span class="logo-text">
-                    <strong>Paws</strong>
-                    <small>Animal Rescue</small>
-                </span>
-
+    <!-- ===== HEADER AND NAVIGATION ===== -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="Paws Animal Rescue home page">
+                <span class="logo-icon" aria-hidden="true">🐾</span>
+                <span class="logo-text"><strong>Paws</strong><small>Animal Rescue</small></span>
             </a>
-
-
-            <ul class="nav-links">
-
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-
-                <li>
-                    <a href="services.html" class="active">
-                        Services
-                    </a>
-                </li>
-
-                <li>
-                    <a href="enquiry.html">Enquiry</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-cta"><a href="index.html#adopt">Adopt a pet</a></li>
             </ul>
-
-
-            <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu">
-
-                ☰
-
-            </button>
-
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">☰</button>
         </nav>
-
     </header>
 
-
-    <!-- =========================
-         MAIN CONTENT
-         ========================= -->
-
-    <main>
-
+    <main id="main">
         <!-- Page banner -->
         <section class="page-banner">
-
-            <div class="section-container">
-
-                <p class="eyebrow">
-                    WHAT WE DO
-                </p>
-
-                <h1>
-                    Caring for animals
-                    <span>in need.</span>
-                </h1>
-
-                <p>
-                    From rescue and rehabilitation to adoption,
-                    we work to give animals the care they deserve.
-                </p>
-
+            <div class="container page-banner-grid">
+                <div>
+                    <p class="breadcrumb"><a href="index.html">Home</a> / Services</p>
+                    <h1>Caring for animals <span class="mark-green mark">in need.</span></h1>
+                    <p>From the first rescue call to the day they go home, here is everything we do for Cape Town's animals.</p>
+                </div>
+                <div class="banner-photo">
+                    <img src="images/vets-examining-rescue-dog.jpg" srcset="images/responsive/vets-examining-rescue-dog-480w.jpg 480w, images/responsive/vets-examining-rescue-dog-800w.jpg 800w, images/responsive/vets-examining-rescue-dog-1200w.jpg 1200w, images/vets-examining-rescue-dog.jpg 1600w" sizes="(max-width: 1000px) 240px, 360px" width="1600" height="800" alt="Two vets in masks examining a black rescue dog" fetchpriority="high" style="object-position:62% 50%">
+                </div>
             </div>
-
         </section>
 
-
-        <!-- Services -->
-        <section class="services-section section-spacing">
-
-            <div class="section-container">
-
+        <!-- ===== SERVICES ===== -->
+        <section class="section">
+            <div class="container">
                 <div class="section-heading centered">
-
-                    <p class="section-label">
-                        OUR SERVICES
-                    </p>
-
-                    <h2>
-                        Helping animals
-                        <span>heal and thrive.</span>
-                    </h2>
-
-                    <p>
-                        Paws Animal Rescue provides several services
-                        to support animals throughout their journey
-                        from rescue to their forever home.
-                    </p>
-
+                    <span class="tag">Our services</span>
+                    <h2>Helping animals heal and thrive.</h2>
+                    <p>Six services support every animal on its journey from rescue to a forever home.</p>
                 </div>
-
-
-                <div class="service-grid">
-
-                    <!-- Animal rescue -->
-                    <article class="service-large-card">
-
-                        <div class="service-card-image">
-
-                            <img src="images/rehabilitation.jpg"
-                                srcset="images/responsive/rehabilitation-480w.jpg 480w, images/responsive/rehabilitation-800w.jpg 800w, images/responsive/rehabilitation-1200w.jpg 1200w, images/rehabilitation.jpg 2000w"
-                                sizes="(max-width: 1000px) 100vw, 50vw"
-                                alt="A rescued dog receiving care">
-
+                <div class="card-grid-3">
+                    <article class="service-large-card reveal" id="animal-rescue">
+                        <div class="card-image"><img src="images/feeding-rescued-dog-and-cat.jpg" srcset="images/responsive/feeding-rescued-dog-and-cat-480w.jpg 480w, images/responsive/feeding-rescued-dog-and-cat-800w.jpg 800w, images/feeding-rescued-dog-and-cat.jpg 1200w" sizes="(max-width: 760px) 92vw, (max-width: 1000px) 46vw, 380px" width="1200" height="798" alt="A volunteer hand-feeding a rescued dog and cat" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Animal rescue</h3>
+                            <p>We answer calls about abandoned, injured and neglected animals and bring them to safety, shelter and a warm meal.</p>
+                            <ul class="card-facts"><li>Rescue line 7 days a week</li><li>Safe shelter</li></ul>
                         </div>
-
-                        <div class="service-card-content">
-
-                            <span class="service-number">
-                                01
-                            </span>
-
-                            <h3>
-                                Animal Rescue
-                            </h3>
-
-                            <p>
-                                We help animals that have been abandoned,
-                                neglected or abused by providing immediate
-                                safety and temporary shelter.
-                            </p>
-
-                        </div>
-
                     </article>
-
-
-                    <!-- Veterinary care -->
-                    <article class="service-large-card">
-
-                        <div class="service-card-image">
-
-                            <img src="images/veterinary.jpg"
-                                srcset="images/responsive/veterinary-480w.jpg 480w, images/responsive/veterinary-800w.jpg 800w, images/responsive/veterinary-1200w.jpg 1200w, images/veterinary.jpg 2160w"
-                                sizes="(max-width: 1000px) 100vw, 50vw"
-                                alt="A veterinarian caring for an animal">
-
+                    <article class="service-large-card reveal" id="veterinary-care">
+                        <div class="card-image"><img src="images/vets-examining-rescue-dog.jpg" srcset="images/responsive/vets-examining-rescue-dog-480w.jpg 480w, images/responsive/vets-examining-rescue-dog-800w.jpg 800w, images/responsive/vets-examining-rescue-dog-1200w.jpg 1200w, images/vets-examining-rescue-dog.jpg 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1000px) 46vw, 380px" width="1600" height="800" alt="Two vets examining a rescued black dog" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Veterinary care</h3>
+                            <p>Our partner vets check, vaccinate, sterilise and treat every animal before it is put up for adoption.</p>
+                            <ul class="card-facts"><li>Vaccinations</li><li>Sterilisation</li><li>Microchips</li></ul>
                         </div>
-
-                        <div class="service-card-content">
-
-                            <span class="service-number">
-                                02
-                            </span>
-
-                            <h3>
-                                Veterinary Care
-                            </h3>
-
-                            <p>
-                                Rescued animals receive basic veterinary
-                                attention and treatment to support their
-                                health and recovery.
-                            </p>
-
-                        </div>
-
                     </article>
-
-
-                    <!-- Rehabilitation -->
-                    <article class="service-large-card">
-
-                        <div class="service-card-image">
-
-                            <img src="images/rescue.jpg"
-                                srcset="images/responsive/rescue-480w.jpg 480w, images/responsive/rescue-800w.jpg 800w, images/rescue.jpg 1200w"
-                                sizes="(max-width: 1000px) 100vw, 50vw"
-                                alt="A volunteer helping a rescued dog">
-
+                    <article class="service-large-card reveal" id="rehabilitation">
+                        <div class="card-image"><img src="images/cat-recovering-with-bandaged-paw.jpg" srcset="images/responsive/cat-recovering-with-bandaged-paw-480w.jpg 480w, images/responsive/cat-recovering-with-bandaged-paw-800w.jpg 800w, images/responsive/cat-recovering-with-bandaged-paw-1200w.jpg 1200w, images/cat-recovering-with-bandaged-paw.jpg 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1000px) 46vw, 380px" width="1600" height="1066" alt="A ginger cat with a bandaged paw being gently cared for" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Rehabilitation</h3>
+                            <p>Injured or nervous animals get time, gentle training and lots of kindness until they are confident again.</p>
+                            <ul class="card-facts"><li>Recovery care</li><li>Behaviour support</li></ul>
                         </div>
-
-                        <div class="service-card-content">
-
-                            <span class="service-number">
-                                03
-                            </span>
-
-                            <h3>
-                                Rehabilitation
-                            </h3>
-
-                            <p>
-                                We provide a caring environment where
-                                animals can regain confidence and learn
-                                to trust people again.
-                            </p>
-
-                        </div>
-
                     </article>
-
-
-                    <!-- Adoption -->
-                    <article class="service-large-card">
-
-                        <div class="service-card-image">
-
-                            <img src="images/adoption.jpg"
-                                srcset="images/responsive/adoption-480w.jpg 480w, images/responsive/adoption-800w.jpg 800w, images/responsive/adoption-1200w.jpg 1200w, images/adoption.jpg 2000w"
-                                sizes="(max-width: 1000px) 100vw, 50vw"
-                                alt="A family adopting a rescue dog">
-
+                    <article class="service-large-card reveal" id="adoption">
+                        <div class="card-image"><img src="images/family-adopting-rescue-dog.jpg" srcset="images/responsive/family-adopting-rescue-dog-480w.jpg 480w, images/responsive/family-adopting-rescue-dog-800w.jpg 800w, images/responsive/family-adopting-rescue-dog-1200w.jpg 1200w, images/family-adopting-rescue-dog.jpg 1600w" sizes="(max-width: 760px) 92vw, (max-width: 1000px) 46vw, 380px" width="1600" height="1067" alt="A happy family with their adopted dog and an ADOPT sign" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Adoption</h3>
+                            <p>We match animals with families based on lifestyle, home and personality, so every adoption lasts.</p>
+                            <ul class="card-facts"><li>Meet and greet</li><li>Home check</li><li>Lifetime support</li></ul>
                         </div>
-
-                        <div class="service-card-content">
-
-                            <span class="service-number">
-                                04
-                            </span>
-
-                            <h3>
-                                Adoption
-                            </h3>
-
-                            <p>
-                                We help match rescued animals with
-                                responsible adopters who can provide
-                                loving and permanent homes.
-                            </p>
-
-                        </div>
-
                     </article>
-
-
-                    <!-- Foster care -->
-                    <article class="service-large-card">
-
-                        <div class="service-card-image">
-
-                            <img src="images/foster.jpg"
-                                srcset="images/responsive/foster-480w.jpg 480w, images/responsive/foster-800w.jpg 800w, images/foster.jpg 900w"
-                                sizes="(max-width: 1000px) 100vw, 50vw"
-                                alt="A foster family caring for a rescue animal">
-
+                    <article class="service-large-card reveal" id="foster-care">
+                        <div class="card-image"><img src="images/foster-family-with-rescue-dog.jpg" srcset="images/responsive/foster-family-with-rescue-dog-480w.jpg 480w, images/responsive/foster-family-with-rescue-dog-800w.jpg 800w, images/foster-family-with-rescue-dog.jpg 900w" sizes="(max-width: 760px) 92vw, (max-width: 1000px) 46vw, 380px" width="900" height="750" alt="A foster family on the couch cuddling a golden retriever" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Foster care</h3>
+                            <p>Foster families give animals a calm, temporary home while they recover or wait for adoption.</p>
+                            <ul class="card-facts"><li>Food supplied</li><li>Vet costs covered</li></ul>
                         </div>
-
-                        <div class="service-card-content">
-
-                            <span class="service-number">
-                                05
-                            </span>
-
-                            <h3>
-                                Foster Care
-                            </h3>
-
-                            <p>
-                                Foster families provide temporary homes
-                                where animals can feel safe while they
-                                wait for permanent adoption.
-                            </p>
-
-                        </div>
-
                     </article>
-
-
-                    <!-- Education -->
-                    <article class="service-large-card">
-
-                        <div class="service-card-image">
-
-                            <img src="images/community.jpg"
-                                srcset="images/responsive/community-480w.jpg 480w, images/community.jpg 680w"
-                                sizes="(max-width: 1000px) 100vw, 50vw"
-                                alt="People learning about responsible pet ownership">
-
+                    <article class="service-large-card reveal" id="community-education">
+                        <div class="card-image"><img src="images/paws-volunteer-team.jpg" srcset="images/responsive/paws-volunteer-team-480w.jpg 480w, images/paws-volunteer-team.jpg 680w" sizes="(max-width: 760px) 92vw, (max-width: 1000px) 46vw, 380px" width="680" height="404" alt="The Paws team and volunteers outside the shelter" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Community education</h3>
+                            <p>We visit schools and communities to teach responsible pet care, sterilisation and kindness to animals.</p>
+                            <ul class="card-facts"><li>School talks</li><li>Free workshops</li></ul>
                         </div>
-
-                        <div class="service-card-content">
-
-                            <span class="service-number">
-                                06
-                            </span>
-
-                            <h3>
-                                Community Education
-                            </h3>
-
-                            <p>
-                                We encourage responsible animal ownership
-                                and help our community understand the
-                                importance of animal welfare.
-                            </p>
-
-                        </div>
-
                     </article>
-
                 </div>
-
             </div>
-
         </section>
 
+        <!-- Moving ticker band (decorative motion; duplicated text creates a seamless loop) -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track"><span>Rescue</span><span>Heal</span><span>Rehome</span><span>Foster</span><span>Sponsor</span><span>Volunteer</span><span>Educate</span><span>Repeat</span><span>Rescue</span><span>Heal</span><span>Rehome</span><span>Foster</span><span>Sponsor</span><span>Volunteer</span><span>Educate</span><span>Repeat</span></div>
+        </div>
 
-        <!-- Adoption section -->
-        <section class="adoption-info section-spacing">
+        <!-- ===== WAYS TO HELP (interactive tabs) ===== -->
+        <section class="section section-tint-orange section-paws" id="ways-to-help">
+            <div class="container">
+                <div class="section-heading centered">
+                    <span class="tag">Ways to help</span>
+                    <h2>Find the way that suits you.</h2>
+                    <p>Choose a tab to see what's involved, what it costs and how to start.</p>
+                </div>
+                <div class="tabs" data-tabs>
+                    <div class="tab-list" role="tablist" aria-label="Ways to help Paws">
+                        <button class="tab-button" role="tab" type="button" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">🏡 Adopt</button>
+                        <button class="tab-button" role="tab" type="button" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">🛋️ Foster</button>
+                        <button class="tab-button" role="tab" type="button" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">🙋 Volunteer</button>
+                        <button class="tab-button" role="tab" type="button" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">💛 Sponsor</button>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
+                        <div>
+                            <h3>Adopt a forever friend</h3>
+                            <p>Give a rescued dog or cat a permanent, loving home. Our team helps you choose an animal that fits your family and lifestyle.</p>
+                            <ul class="check-list"><li>Every animal is sterilised, vaccinated and microchipped</li><li>Meet-and-greet visits Monday to Saturday</li><li>Free behaviour advice after adoption</li></ul>
+                            <a class="btn btn-primary" href="enquiry.html">Enquire about adopting</a>
+                        </div>
+                        <div class="price-box"><h4>Adoption fees</h4><dl><dt>Kittens</dt><dd>R950</dd><dt>Adult cats</dt><dd>R850</dd><dt>Adult dogs</dt><dd>R1 200</dd><dt>Puppies</dt><dd>R1 500</dd><dt>Bonded pairs</dt><dd>R1 800</dd></dl></div>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
+                        <div>
+                            <h3>Foster for a few weeks</h3>
+                            <p>Fostering gives an animal a calm place to recover or grow before adoption, and frees up space for us to rescue another.</p>
+                            <ul class="check-list"><li>Usually 2–8 weeks per animal</li><li>Great if you can't commit to a lifetime pet yet</li><li>Support from our team, day and night</li></ul>
+                            <a class="btn btn-primary" href="enquiry.html">Enquire about fostering</a>
+                        </div>
+                        <div class="price-box"><h4>What it costs you</h4><dl><dt>Food and bedding</dt><dd>Supplied</dd><dt>Vet care</dt><dd>Covered</dd><dt>Your cost</dt><dd>R0</dd></dl></div>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
+                        <div>
+                            <h3>Volunteer your time</h3>
+                            <p>Walk dogs, socialise cats, help at adoption days or support our admin and social media. All training is provided.</p>
+                            <ul class="check-list"><li>Volunteers must be 16 or older</li><li>One free orientation session</li><li>Flexible weekday and Saturday shifts</li></ul>
+                            <a class="btn btn-primary" href="enquiry.html">Enquire about volunteering</a>
+                        </div>
+                        <div class="price-box"><h4>Volunteer shifts</h4><dl><dt>Weekdays</dt><dd>08:00–12:00</dd><dt></dt><dd>13:00–17:00</dd><dt>Saturdays</dt><dd>09:00–14:00</dd><dt>Cost</dt><dd>Free</dd></dl></div>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
+                        <div>
+                            <h3>Sponsor an animal</h3>
+                            <p>A monthly sponsorship pays for food, flea treatment and vet visits for animals in our care. You'll get photo updates from your sponsored animal.</p>
+                            <ul class="check-list"><li>Cancel or change your amount at any time</li><li>Section 18A tax certificate provided</li><li>Monthly photo updates</li></ul>
+                            <a class="btn btn-primary" href="enquiry.html">Enquire about sponsoring</a>
+                        </div>
+                        <div class="price-box"><h4>Monthly sponsorship</h4><dl><dt>Paw Pal</dt><dd>R150</dd><dt>Best Friend</dt><dd>R300</dd><dt>Guardian Angel</dt><dd>R600</dd><dt>Your own amount</dt><dd>From R50</dd></dl></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div class="section-container two-column">
-
+        <!-- ===== ADOPTION INFORMATION ===== -->
+        <section class="section">
+            <div class="container two-column">
                 <div class="text-content">
-
-                    <p class="section-label">
-                        FIND A COMPANION
-                    </p>
-
-                    <h2>
-                        Ready to give an animal
-                        a <span>forever home?</span>
-                    </h2>
-
-                    <p>
-                        Adoption gives rescued animals the opportunity
-                        to become part of a loving family.
-                    </p>
-
-                    <p>
-                        Our team aims to make responsible matches between
-                        animals and adopters based on lifestyle, environment
-                        and the needs of each animal.
-                    </p>
-
-                    <a href="enquiry.html" class="btn btn-primary">
-                        Enquire About Adoption
-                    </a>
-
+                    <span class="tag tag-green">Find a companion</span>
+                    <h2>Ready to give an animal a forever home?</h2>
+                    <p>Adoption gives a rescued animal the chance to become part of a loving family, and gives you a loyal new friend.</p>
+                    <p>We match animals with adopters based on lifestyle, home and the needs of each animal, so both of you are set up for a happy life together.</p>
+                    <div class="button-row">
+                        <a href="index.html#adopt" class="btn btn-primary">Meet the animals</a>
+                        <a href="enquiry.html" class="btn btn-outline">Enquire about adoption</a>
+                    </div>
                 </div>
-
-
-                <div class="image-content">
-
-                    <img src="images/adoption.jpg"
-                        srcset="images/responsive/adoption-480w.jpg 480w, images/responsive/adoption-800w.jpg 800w, images/responsive/adoption-1200w.jpg 1200w, images/adoption.jpg 2000w"
-                        sizes="(max-width: 700px) 100vw, 50vw"
-                        alt="A happy family with their adopted dog">
-
+                <div class="image-frame reveal">
+                    <img src="images/golden-retriever-puppy-milo.jpg" srcset="images/responsive/golden-retriever-puppy-milo-480w.jpg 480w, images/responsive/golden-retriever-puppy-milo-800w.jpg 800w, images/golden-retriever-puppy-milo.jpg 1200w" sizes="(max-width: 760px) 92vw, 560px" width="1200" height="1197" alt="Milo, a golden retriever puppy, sitting happily in a flower-filled garden" loading="lazy" decoding="async" style="object-position:50% 45%">
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- Frequently asked questions: interactive accordion -->
-        <section class="faq-section section-spacing">
-            <div class="section-container">
+        <!-- ===== FAQ ACCORDION ===== -->
+        <section class="section section-tint-green" id="faq">
+            <div class="container">
                 <div class="section-heading centered">
-                    <p class="section-label">NEED TO KNOW MORE?</p>
-                    <h2>Frequently asked <span>questions.</span></h2>
-                    <p>Quick answers about adopting and supporting animals at Paws.</p>
+                    <span class="tag">Need to know more?</span>
+                    <h2>Frequently asked questions.</h2>
+                    <p>Quick answers about adopting, fostering and supporting Paws.</p>
                 </div>
                 <div class="faq-list">
-                    <article class="faq-item">
-                        <h3><button class="faq-question" type="button" aria-expanded="false">How does the adoption process work?</button></h3>
-                        <div class="faq-answer" hidden><p>Submit an adoption enquiry with your details and the animal you are interested in. Our team will discuss the animal's needs and the next steps with you.</p></div>
-                    </article>
-                    <article class="faq-item">
-                        <h3><button class="faq-question" type="button" aria-expanded="false">Can I foster an animal instead of adopting?</button></h3>
-                        <div class="faq-answer" hidden><p>Yes. Fostering provides temporary care while an animal waits for a permanent home. Send us an enquiry and we can explain current fostering needs.</p></div>
-                    </article>
-                    <article class="faq-item">
-                        <h3><button class="faq-question" type="button" aria-expanded="false">How can I volunteer or donate?</button></h3>
-                        <div class="faq-answer" hidden><p>Use our enquiry form and select the type of support you are interested in. Our team will respond with relevant information.</p></div>
-                    </article>
-                    <article class="faq-item">
-                        <h3><button class="faq-question" type="button" aria-expanded="false">Are all animals ready for adoption immediately?</button></h3>
-                        <div class="faq-answer" hidden><p>Not always. Some animals need veterinary treatment, rehabilitation or foster care first. Availability can change, so please contact us about a specific animal.</p></div>
-                    </article>
+                    <div class="faq-item">
+                        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+                            <span>How does the adoption process work?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button></h3>
+                        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden><p>Choose an animal, send us an enquiry, then visit for a meet-and-greet. After a short home check, usually within five working days, your new friend can go home with you.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+                            <span>What does the adoption fee cover?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button></h3>
+                        <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><p>Every fee includes sterilisation, up-to-date vaccinations, deworming, flea treatment and a microchip. These would cost far more at a private vet.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+                            <span>Can I foster an animal instead of adopting?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button></h3>
+                        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><p>Yes. Fostering gives an animal temporary care while it waits for a permanent home. We supply food, bedding and vet care, so it costs you nothing.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+                            <span>How can I volunteer or donate?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button></h3>
+                        <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><p>Use our enquiry form and choose volunteering or sponsorship. We'll reply with your orientation date or sponsorship details within two working days.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+                            <span>Are all animals ready for adoption straight away?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button></h3>
+                        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden><p>Not always. Some animals need treatment, rehabilitation or foster care first. Availability changes often, so please ask about a specific animal.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
+                            <span>Do you take in animals that people can no longer keep?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button></h3>
+                        <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6" hidden><p>When we have space, yes. Please call 021 555 0123 first so we can plan. If we are full, we'll help you find another safe option.</p></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
+        <!-- ===== CALL TO ACTION ===== -->
         <section class="cta-section">
-
-            <div class="cta-content">
-
-                <p class="section-label">
-                    YOU CAN HELP
-                </p>
-
-                <h2>
-                    Rescue starts with
-                    <span>people who care.</span>
-                </h2>
-
-                <p>
-                    Volunteer, sponsor or foster an animal
-                    and become part of the Paws community.
-                </p>
-
-                <a href="enquiry.html" class="btn btn-light">
-                    Get Involved
-                </a>
-
+            <div class="container">
+                <h2>Rescue starts with people who care.</h2>
+                <p>Volunteer, sponsor or foster an animal and become part of the Paws family.</p>
+                <div class="button-row">
+                    <a href="enquiry.html" class="btn btn-primary">Get involved</a>
+                    <a href="contact.html" class="btn btn-light">Contact us</a>
+                </div>
             </div>
-
         </section>
-
     </main>
 
-
-    <!-- =========================
-         FOOTER
-         ========================= -->
-
-    <footer>
-
-        <div class="footer-container">
-
+    <!-- ===== FOOTER (internal links, contact details and social media links) ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
             <div class="footer-about">
-
                 <a href="index.html" class="logo">
-
-                    <span class="logo-icon">🐾</span>
-
-                    <span class="logo-text">
-                        <strong>Paws</strong>
-                        <small>Animal Rescue</small>
-                    </span>
-
+                    <span class="logo-icon" aria-hidden="true">🐾</span>
+                    <span class="logo-text"><strong>Paws</strong><small>Animal Rescue</small></span>
                 </a>
-
-                <p>
-                    Rescue. Love. Rehome.
-                    Giving vulnerable animals the second chance
-                    they deserve.
-                </p>
-
+                <p>Rescue. Love. Rehome. A Cape Town non-profit giving abandoned, neglected and abused animals the second chance they deserve.</p>
+                <ul class="social-links" aria-label="Paws Animal Rescue on social media">
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">f</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">ig</a></li>
+                    <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok (opens in a new tab)">tt</a></li>
+                </ul>
             </div>
-
-
-            <div class="footer-links">
-
-                <h3>Quick Links</h3>
-
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="enquiry.html">Enquiry</a>
-                <a href="contact.html">Contact</a>
-
+            <div>
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Our services</a></li>
+                    <li><a href="services.html#faq">Adoption FAQs</a></li>
+                </ul>
             </div>
-
-
-            <div class="footer-contact">
-
-                <h3>Contact Us</h3>
-
-                <p>📍 Cape Town, South Africa</p>
-                <p>📞 021 555 0123</p>
-                <p>✉️ hello@pawsrescue.co.za</p>
-
+            <div>
+                <h3>Get involved</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#adopt">Adopt a dog or cat</a></li>
+                    <li><a href="enquiry.html">Volunteer or foster</a></li>
+                    <li><a href="enquiry.html">Sponsor an animal</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
             </div>
-
+            <div>
+                <h3>Visit us</h3>
+                <p>25 Main Road, Diep River<br>18 Blaauwberg Road, Table View<br>Cape Town</p>
+                <p><a href="tel:+27215550123">021 555 0123</a><br><a href="mailto:hello@pawsrescue.co.za">hello@pawsrescue.co.za</a></p>
+            </div>
         </div>
-
-
         <div class="footer-bottom">
-
-            <p>
-                © 2026 Paws Animal Rescue. All rights reserved.
-            </p>
-
+            <p>© <span data-year>2026</span> Paws Animal Rescue NPC. A fictional organisation created for a web development project.</p>
         </div>
-
     </footer>
 
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-
+    <!-- PAGE SPEED: scripts load with "defer" so they never block the page from displaying -->
+    <script src="js/animals.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
-
 </html>
