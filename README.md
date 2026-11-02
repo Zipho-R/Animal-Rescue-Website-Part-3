@@ -213,7 +213,8 @@ _Add screenshots of the desktop, tablet and mobile views here (for example `scre
 ## 15. Deployment
 
 1. Push all files to the GitHub repository.
-2. **GitHub Pages:** Settings → Pages → Source: *Deploy from a branch* → `main` / root → Save.
+2. **Vercel (chosen host):** vercel.com → Add New → Project → import this GitHub repository → Framework preset *Other*, no build command → Deploy. Vercel redeploys automatically on every push to `main`.
+   **or GitHub Pages:** Settings → Pages → Source: *Deploy from a branch* → `main` / root → Save.
    **or Netlify:** Add new site → Import from GitHub → choose the repository → Deploy (no build command needed; `_headers` is applied automatically).
 3. The live link (`https://zipho-r.github.io/Animal-Rescue-Website-Part-2/`) is already set in this README, `robots.txt` and `sitemap.xml`.
 4. Optional: submit `sitemap.xml` in Google Search Console.
