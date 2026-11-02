@@ -350,6 +350,7 @@ let openProfile = () => {};
     const image = $("img", box);
     const caption = $(".lightbox-caption", box);
     let current = 0;
+    let opener = null; // the gallery button that opened the viewer
 
     function show(index) {
         current = (index + items.length) % items.length;
@@ -361,6 +362,7 @@ let openProfile = () => {};
     }
 
     function open(index) {
+        opener = items[index];
         show(index);
         box.hidden = false;
         document.body.classList.add("modal-open");
@@ -370,7 +372,7 @@ let openProfile = () => {};
     function close() {
         box.hidden = true;
         document.body.classList.remove("modal-open");
-        items[current].focus();
+        (opener || items[current]).focus();
     }
 
     items.forEach((item, index) => item.addEventListener("click", () => open(index)));

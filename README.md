@@ -1,5 +1,8 @@
 # Paws Animal Rescue Website
 
+- **Live website:** <https://animal-rescue-website-part-3.vercel.app/>
+- **Repository:** <https://github.com/Zipho-R/Animal-Rescue-Website-Part-3>
+
 ## 1. Project Overview
 
 Paws Animal Rescue is a fictional non-profit animal rescue organisation based in Cape Town, South Africa. It rescues abandoned, neglected and abused animals and helps them find safe, permanent homes.
@@ -8,8 +11,7 @@ The website gives Paws a friendly online presence. Visitors can learn about the 
 
 The website was developed as part of an academic web development project (Parts 1–3).
 
-**Live website:** <https://zipho-r.github.io/Animal-Rescue-Website-Part-2/>  
-**Repository:** <https://github.com/Zipho-R/Animal-Rescue-Website-Part-2>
+The site is hosted on **Vercel**. Screenshots of the working site are in [Section 14](#screenshot-evidence).
 
 ---
 
@@ -80,8 +82,11 @@ Animal-Rescue-Website/
 ├── contact.html
 ├── robots.txt            ← instructions for search engine crawlers
 ├── sitemap.xml           ← list of pages for search engines
-├── _headers              ← security and caching headers (Netlify)
+├── vercel.json           ← security and caching headers for the live Vercel site
+├── _headers              ← the same headers for Netlify (ignored by Vercel)
 ├── README.md
+├── docs/
+│   └── screenshots/      ← screenshots of the live website (used in this README)
 ├── css/
 │   └── style.css
 ├── js/
@@ -177,18 +182,21 @@ For general messages to the organisation.
 - **Backlinks (plan):** listing Paws on Cape Town pet directories, local vet and pet shop partner websites, and community notice boards; guest posts on local pet blogs; and the deployed site link in social media bios.
 
 ### Additional requirements
-- **robots.txt:** allows all pages to be crawled and points to the sitemap.
-- **sitemap.xml:** lists all five pages with priorities and last-modified dates.
-- **Page speed:** compressed images in 480/800/1200px sizes, lazy loading below the fold, `fetchpriority="high"` on the main image, deferred scripts, font `preconnect` with `display=swap`, and cache headers in `_headers`.
-- **Security:** a Content-Security-Policy restricts which sites can supply scripts, styles, images and form submissions; Subresource Integrity on the Leaflet files; `rel="noopener noreferrer"` on external links; all visitor input is shown with `textContent` (never `innerHTML`) to prevent cross-site scripting; input lengths are limited; and security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, HSTS) are set in `_headers`.
+- **robots.txt:** allows all pages to be crawled and points to `https://animal-rescue-website-part-3.vercel.app/sitemap.xml`.
+- **sitemap.xml:** lists all five pages as absolute Vercel URLs, with priorities and last-modified dates.
+- **Canonical URLs:** every page has a `<link rel="canonical">` and an `og:url` with its full Vercel address, and `og:image` uses an absolute URL so link previews can load the photo.
+- **Page speed:** compressed images in 480/800/1200px sizes, lazy loading below the fold, `fetchpriority="high"` on the main image, deferred scripts, font `preconnect` with `display=swap`, and cache headers in `vercel.json`. Images are cached for a week, so a replaced image must be given a new file name. CSS and JavaScript use `max-age=0, must-revalidate`: their file names do not change when they are edited, so the browser checks for a newer version on every visit and gets a quick "304 Not Modified" reply when nothing has changed.
+- **Security:** a Content-Security-Policy restricts which sites can supply scripts, styles, images and form submissions; Subresource Integrity on the Leaflet files; `rel="noopener noreferrer"` on external links; all visitor input is shown with `textContent` (never `innerHTML`) to prevent cross-site scripting; input lengths are limited; and security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) are set in `vercel.json`. Vercel adds HTTPS and `Strict-Transport-Security` automatically.
 
-`robots.txt` and `sitemap.xml` point to the live address: `https://zipho-r.github.io/Animal-Rescue-Website-Part-2/`.
+`robots.txt`, `sitemap.xml`, the canonical tags and the structured data all point to the live address: `https://animal-rescue-website-part-3.vercel.app/`.
 
 ---
 
 ## 13. Accessibility
 
-Skip-to-content link; visible keyboard focus; labelled form fields with `aria-describedby` errors and hints; `aria-expanded`, `aria-controls`, `aria-selected` and `role="dialog"` on interactive components; focus trapped inside dialogs and returned afterwards; descriptive alt text; WCAG-compliant colour contrast; and reduced-motion support.
+Skip-to-content link; visible keyboard focus; labelled form fields with `aria-describedby` errors and hints; `aria-expanded`, `aria-controls`, `aria-selected` and `role="dialog"` on interactive components; focus trapped inside dialogs (Tab and Shift+Tab loop inside, Escape closes) and returned to the button that opened them; descriptive alt text; and reduced-motion support.
+
+**Colour contrast** was measured in the browser against WCAG 2.2 AA on every page and in every pop-up, tab, FAQ, form error state and form result. All text meets 4.5:1 (3:1 for large text), including the worst case where a paw print in the background pattern sits behind the text; the lowest is 4.58:1. Every one of the 185 focusable elements has a focus indicator of at least 3:1 against its background (WCAG 1.4.11). Text inside photographs is not included, as WCAG exempts it.
 
 ---
 
@@ -206,8 +214,41 @@ The website was tested in a browser at desktop (1366px) and mobile (390px) width
 - No horizontal scrolling on mobile; no JavaScript errors in the console.
 - Every page has one `<h1>`, no duplicate IDs, alt text on all images and no broken local links.
 
+### Automated browser checks (2 November 2026)
+The interactive features were also tested automatically in headless Google Chrome, which clicked, typed and pressed keys on the pages the same way a visitor would. All 29 checks passed, with no JavaScript errors or Content-Security-Policy violations on any page:
+
+| Page | What was checked |
+|---|---|
+| Home | Cards built from `animals.js`; search ("luna"); "no results" message; dogs/cats filter; sorting; profile pop-up opens with photo, details and fee; focus moves into the pop-up; Escape closes it |
+| Services | Tabs switch panels; FAQ opens; opening another FAQ closes the first |
+| About | Gallery lightbox opens; arrow key shows the next photo; Escape closes it |
+| Enquiry | Empty form shows field errors; a valid adoption enquiry shows the cost and availability response |
+| Contact | Leaflet map loads tiles and both branch markers; empty form shows errors; a valid message is compiled into a `mailto:` email |
+| Mobile (390px) | Menu button shows, opens the menu and changes to a close icon; no horizontal scrolling |
+
+Two further browser checks (2 November 2026, after the accessibility fixes) confirmed that clicking "Apply to adopt" or "Join waiting list" for each of the six animals, and the link inside the profile pop-up, pre-fills the enquiry type and animal; and that in both dialogs Tab and Shift+Tab stay inside, Escape closes, and focus returns to the button that opened the dialog, including after moving to another photo in the lightbox.
+
+A separate check confirmed that all 220 local file and link references (pages, images, `srcset` sizes, CSS and scripts) exist, every page has one `<h1>` and no duplicate IDs, and every URL in `sitemap.xml` loads on the live site.
+
 ### Screenshot Evidence
-_Add screenshots of the desktop, tablet and mobile views here (for example `screenshots/desktop.png`, `screenshots/tablet.png`, `screenshots/mobile.png`)._
+These screenshots were taken from the live site (<https://animal-rescue-website-part-3.vercel.app/>) on 2 November 2026.
+
+| Home page (desktop) | Animal directory with search, filter and sort |
+|---|---|
+| ![Home page on desktop](docs/screenshots/home-desktop.jpg) | ![Animal directory with search, filter and sort controls](docs/screenshots/animal-directory-search-filter-sort.jpg) |
+| **Animal profile pop-up** | **FAQ accordion (Services page)** |
+| ![Buddy's animal profile pop-up](docs/screenshots/animal-profile-modal.jpg) | ![FAQ accordion with the first question open](docs/screenshots/services-faq-accordion.jpg) |
+| **Enquiry form: cost and availability response** | **Contact form: compiled email** |
+| ![Enquiry form response showing adoption fee and availability](docs/screenshots/enquiry-form-cost-availability-response.jpg) | ![Contact form email preview ready to send](docs/screenshots/contact-form-email-preview.jpg) |
+| **Contact page: interactive Leaflet map** | **Tablet layout (768px)** |
+| ![Leaflet map with both branch markers](docs/screenshots/contact-branch-map.jpg) | ![Home page on a tablet](docs/screenshots/home-tablet.jpg) |
+| **Mobile layout (390px)** | **Mobile navigation menu** |
+| ![Home page on a mobile phone](docs/screenshots/home-mobile.jpg) | ![Mobile navigation menu open](docs/screenshots/mobile-navigation-menu.jpg) |
+
+### Known limitations
+- **Forms do not reach a real inbox.** The enquiry form sends its data to JSONPlaceholder, a free test API, so the AJAX request and response are real but nothing is stored. The contact form opens the visitor's own email app with the message filled in; it does not send the email itself.
+- **The Content-Security-Policy is set with a `<meta>` tag** so it works on any host. A meta tag cannot set `frame-ancestors`, so protection against the site being shown inside another site's frame comes from the `X-Frame-Options: DENY` header in `vercel.json`.
+- **The map depends on two outside services** (unpkg for Leaflet and OpenStreetMap for tiles). If either is unavailable, the page shows the branch addresses instead.
 
 ---
 
@@ -217,8 +258,9 @@ _Add screenshots of the desktop, tablet and mobile views here (for example `scre
 2. **Vercel (chosen host):** vercel.com → Add New → Project → import this GitHub repository → Framework preset *Other*, no build command → Deploy. Vercel redeploys automatically on every push to `main`.
    **or GitHub Pages:** Settings → Pages → Source: *Deploy from a branch* → `main` / root → Save.
    **or Netlify:** Add new site → Import from GitHub → choose the repository → Deploy (no build command needed; `_headers` is applied automatically).
-3. The live link (`https://zipho-r.github.io/Animal-Rescue-Website-Part-2/`) is already set in this README, `robots.txt` and `sitemap.xml`.
-4. Optional: submit `sitemap.xml` in Google Search Console.
+3. The live link (`https://animal-rescue-website-part-3.vercel.app/`) is set in this README, `robots.txt`, `sitemap.xml` and the canonical tags.
+4. Vercel reads the security and caching headers from `vercel.json` (it ignores `_headers`). After deploying, check that they are active by running `curl -I https://animal-rescue-website-part-3.vercel.app/` or by opening the browser developer tools → Network → the page request → Response Headers, and looking for `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`.
+5. Optional: submit `sitemap.xml` in Google Search Console.
 
 ---
 
@@ -245,7 +287,7 @@ Online donations, a real database and admin dashboard for animals, volunteer acc
 | Enquiry form | Required-field check and a generic confirmation | Conditional fields, format validation, per-field errors, AJAX `fetch()` submission and a cost/availability response |
 | Contact form | Required-field check only; map placeholder | Message-type field, validation, compiled `mailto:` email with preview; working Leaflet map (missing script added) |
 | SEO | Basic titles, no meta descriptions strategy, no robots/sitemap | Keyword-based titles and descriptions, Open Graph/Twitter tags, JSON-LD local business data, `robots.txt`, `sitemap.xml` |
-| Security and speed | None | Content-Security-Policy, `_headers` security/cache headers, SRI on Leaflet, `textContent` output, lazy loading, deferred scripts |
+| Security and speed | None | Content-Security-Policy, security and cache headers in `vercel.json`, SRI on Leaflet, `textContent` output, lazy loading, deferred scripts |
 
 The interim commit "Add interactive Part 3 website features" (an early draft of the contact map, homepage and services changes) was replaced by the final versions of those files described below.
 
@@ -260,7 +302,6 @@ The interim commit "Add interactive Part 3 website features" (an early draft of 
 - **Mismatched images and alt text on the Services page:** the "Animal Rescue" card showed the rehabilitation photo and vice versa. Images and alt text now match each service.
 - **Team details:** "Daniel Jacobs" was shown with a photo of a woman; renamed to Danielle Jacobs.
 - **Unused file:** `volunteer.jpg` (a phone screenshot) was not used on any page and was removed.
-- _Add any further specific comments from your Part 2 lecturer feedback here, with what you changed._
 
 #### Design
 - New brighter palette of orange, green, black and white (see Section 9), replacing the muted greens, coral and cream.
@@ -298,6 +339,31 @@ The interim commit "Add interactive Part 3 website features" (an early draft of 
 - **All emojis removed:** emojis display differently on every device (and sometimes not at all), and screen readers can read them out. Every emoji in the HTML, CSS and JavaScript was removed.
 - **SVG icons instead:** where an icon helps, the emoji was replaced with an inline SVG icon from the open-source Lucide icon set (paw print logo and favicon, menu and close buttons, card icons such as house, sofa, hand, heart, stethoscope, sprout, lifebuoy, target, globe, shield, sun and map pin, and check marks). The icons are drawn in the HTML, so they need no extra download and are allowed by the Content-Security-Policy. They use `currentColor`, so they follow the site's colours, and they have `aria-hidden="true"` so screen readers skip them.
 - **Emoji with no icon:** the dog/cat emojis on the animal badges, the paw at the start of the enquiry notice and the tick after "Copied" were removed; the text alone is used.
+
+#### Accessibility fixes (colour contrast and focus)
+Measuring the site against WCAG 2.2 AA found several colours below the required contrast. Each was fixed and re-measured:
+
+| Problem | Before | Fix | After |
+|---|---|---|---|
+| Orange focus outline on light backgrounds | 1.78–2.87:1 (needs 3:1) | Focus outline is now black; the footer, tab bar and photo viewer keep orange because black would not show on their dark backgrounds | 3.69–18.88:1 |
+| Checkboxes and radio buttons showed only a faint green glow when focused | 1.33:1 | Added a black outline for focused checkboxes and radio buttons | 18.88:1 |
+| Orange required-field asterisk (*) | 2.87:1 (needs 4.5:1) | Asterisk changed to dark red `#B42318` | 6.14–6.57:1 |
+| "Available" badge text in the profile pop-up | 4.43:1 | Badge text changed to black | 5.91:1 |
+| Placeholder text in fields with an error | 4.30:1 | Placeholder colour set to `#6B6B6B` | 4.98:1 (5.33:1 without an error) |
+| Green links on the paw-print pattern, where a paw sits behind the text | 3.97:1 | These links use a darker green `#006B35` | 5.17:1 or more |
+
+- **Lightbox focus:** closing the photo viewer now returns focus to the photo that opened it, even after moving to other photos with the arrow buttons (before, focus went to the last photo viewed).
+
+#### Navigation and hero clean-up
+- Removed the "Adopt a pet" button from the navigation bar on every page. Visitors reach the animals through the "Meet our animals" button and the Home page.
+- Removed the four hero points (Sterilised, Vaccinated, Microchipped, Lifetime support) from the Home page hero, to keep the hero focused on the main message and buttons.
+
+#### Pre-submission review: live URL, headers and evidence
+- **Live URL corrected:** `robots.txt`, `sitemap.xml` and this README pointed to an old GitHub Pages address from Part 2 (`https://zipho-r.github.io/Animal-Rescue-Website-Part-2/`) that was never used. They now use the live Vercel address `https://animal-rescue-website-part-3.vercel.app/`, and the repository link uses the renamed `Animal-Rescue-Website-Part-3` repository.
+- **Canonical and social URLs added:** each page now has a canonical link and an `og:url` with its full address; `og:image` was changed from a relative path to an absolute URL so link previews can load it; the Home page structured data now includes the site `url`.
+- **Vercel security-header configuration added:** the site's headers were in `_headers`, which only Netlify reads, so the live site was not sending them (checked with `curl -I` before the change). Added `vercel.json` with `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy` for all pages. HSTS is not repeated because Vercel already sends a stronger one. No second Content-Security-Policy header was added, because the existing meta tag already applies on every page and a second policy could block resources.
+- **Caching corrected:** images stay cached for a week (a replaced image must use a new file name). CSS and JavaScript were changed from a one-week cache to `max-age=0, must-revalidate`, because their file names stay the same when they are edited and any longer cache could show old styles or scripts with new pages after an update. `_headers` was updated to match and its comment now explains that it is only for Netlify.
+- **Screenshot evidence added:** the placeholder was replaced with ten real screenshots of the live site in `docs/screenshots/`, plus the results of the automated browser checks and a list of known limitations.
 
 #### Documentation
 - README updated with Part 3 functionality, forms, SEO, deployment instructions, this changelog and a references list.
@@ -347,6 +413,8 @@ Netlify, 2026. *Custom headers*. [online] Available at: <https://docs.netlify.co
 OpenStreetMap contributors, 2026. *OpenStreetMap*. [online] Available at: <https://www.openstreetmap.org/copyright> [Accessed 2 November 2026].
 
 Schema.org, 2026. *AnimalShelter*. [online] Available at: <https://schema.org/AnimalShelter> [Accessed 2 November 2026].
+
+Vercel, 2026. *Configuring projects with vercel.json: headers*. [online] Available at: <https://vercel.com/docs/project-configuration#headers> [Accessed 2 November 2026].
 
 W3C, 2024. *ARIA Authoring Practices Guide: Accordion, Tabs and Dialog (Modal) patterns*. [online] Available at: <https://www.w3.org/WAI/ARIA/apg/patterns/> [Accessed 2 November 2026].
 
